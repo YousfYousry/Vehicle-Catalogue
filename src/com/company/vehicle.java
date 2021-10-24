@@ -1,5 +1,8 @@
 package com.company;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -10,7 +13,8 @@ public class vehicle {
     private String brand;
     private Calendar dateOfProduction;
     private String IDNumber;
-    private boolean availability;
+    private JButton viewButton;
+    private JCheckBox availability;
 
     public vehicle() {
         setCategory("");
@@ -29,6 +33,13 @@ public class vehicle {
         setDateOfProduction(aDay, aMonth, aYear);
         setIDNumber(aIDNumber);
         setAvailability(aAvailability);
+        setButton();
+    }
+
+    private void setButton(){
+        viewButton =new JButton("");
+        ImageIcon img = new ImageIcon(System.getProperty("user.dir") + "\\assets\\view.png");
+        viewButton.setIcon(new ImageIcon(getScaledImage(img.getImage(), 15, 15)));
     }
 
     private void setCategory(String aCategory) {
@@ -54,7 +65,9 @@ public class vehicle {
     }
 
     private void setAvailability(boolean aAvailability) {
-        this.availability = aAvailability;
+        availability = new JCheckBox("",aAvailability);
+        availability.setHorizontalAlignment(SwingConstants.CENTER);
+        availability.setBackground(Color.WHITE);
     }
 
     protected String getDateOfProduction() {
@@ -79,6 +92,21 @@ public class vehicle {
     }
 
     protected String getAvailability() {
-        return (availability) ? "Yes" : "No";
+        return (availability.isSelected()) ? "Yes" : "No";
+    }
+
+    public Object[] getObject(){
+        return new Object[]{viewButton, getCategory(), getName(), getBrand(), getDateOfProduction(), getIDNumber(), availability};
+    }
+
+    private Image getScaledImage(Image srcImg, int w, int h) {
+        BufferedImage resizedImg = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2 = resizedImg.createGraphics();
+
+        g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+        g2.drawImage(srcImg, 0, 0, w, h, null);
+        g2.dispose();
+
+        return resizedImg;
     }
 }

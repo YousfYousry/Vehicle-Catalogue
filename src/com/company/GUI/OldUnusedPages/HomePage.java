@@ -1,7 +1,5 @@
 package com.company.GUI.OldUnusedPages;
 
-import com.company.GUI.SetPage;
-
 import javax.swing.*;
 import java.awt.*;
 
