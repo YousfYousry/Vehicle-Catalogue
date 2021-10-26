@@ -15,13 +15,13 @@ import java.util.ArrayList;
 public class DashBoardPage extends JFrame {
     private GridBagConstraints gbc = new GridBagConstraints();
     private JLabel searchLabel = new JLabel("Search: ");
-    private HintTextField searchField = new HintTextField("Enter Name Or ...");// a custom class used to show the hint when the jtext field is empty
+    private HintTextField searchField;// a custom class used to show the hint when the jtext field is empty
 
     public DashBoardPage(String title) {
         setTitle(title);
         setLayout(new GridBagLayout());
+        searchField = new HintTextField("Enter Name Or ...", addTable());
         addSearch();
-        addTable();
     }
 
     public void viewSearch(boolean view) {
@@ -81,7 +81,7 @@ public class DashBoardPage extends JFrame {
         });
     }
 
-    private void addTable() {
+    private JTable addTable() {
         ArrayList<vehicle> records = Records.getRecords();
         Object data[][] = new Object[records.size()][7];
         for (int i = 0; i < records.size(); i++) {
@@ -89,7 +89,7 @@ public class DashBoardPage extends JFrame {
         }
 
         String columnTitle[] = {"View", "Category", "Name", "Brand", "Date Of Production", "ID Number", "Availability"};
-        JTable jt = new JTable(data, columnTitle) {
+        JTable jTable = new JTable(data, columnTitle) {
             @Override
             public Component prepareRenderer(TableCellRenderer renderer, int row, int column) {
                 Component component = super.prepareRenderer(renderer, row, column);
@@ -103,23 +103,23 @@ public class DashBoardPage extends JFrame {
                 return component;
             }
         };
-        jt.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+        jTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(JLabel.CENTER);
         for (int i = 0; i < columnTitle.length; i++) {
-            jt.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+            jTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
         }
-        jt.getColumn("View").setCellEditor(new ButtonEditor());
-        jt.getColumn("View").setCellRenderer(new JTableRenderer(jt.getDefaultRenderer(JButton.class)));
-        jt.getColumn("Availability").setCellEditor(new CheckBoxEditor());
-        jt.getColumn("Availability").setCellRenderer(new JTableRenderer(jt.getDefaultRenderer(JCheckBox.class)));
-        jt.setUpdateSelectionOnSort(true);
-        jt.setRowSelectionAllowed(true);
-//        jt.setColumnSelectionAllowed(false);
-        jt.setAutoCreateRowSorter(true);
-        jt.setFillsViewportHeight(true);
-        JScrollPane scrollPane = new JScrollPane(jt);
+        jTable.getColumn("View").setCellEditor(new ButtonEditor());
+        jTable.getColumn("View").setCellRenderer(new JTableRenderer(jTable.getDefaultRenderer(JButton.class)));
+        jTable.getColumn("Availability").setCellEditor(new CheckBoxEditor());
+        jTable.getColumn("Availability").setCellRenderer(new JTableRenderer(jTable.getDefaultRenderer(JCheckBox.class)));
+        jTable.setUpdateSelectionOnSort(true);
+        jTable.setRowSelectionAllowed(true);
+        jTable.setColumnSelectionAllowed(false);
+        jTable.setAutoCreateRowSorter(true);
+        jTable.setFillsViewportHeight(true);
+        JScrollPane scrollPane = new JScrollPane(jTable);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         JPanel contentPane = new JPanel(new BorderLayout());
         contentPane.add(scrollPane, BorderLayout.CENTER);
@@ -131,6 +131,7 @@ public class DashBoardPage extends JFrame {
         gbc.fill = GridBagConstraints.BOTH;
         gbc.insets = new Insets(0, 0, 0, 0);
         add(contentPane, gbc);
+        return jTable;
     }
 
     private void addFilter() {
