@@ -36,8 +36,8 @@ public class vehicle {
         setButton();
     }
 
-    private void setButton(){
-        viewButton =new JButton("");
+    private void setButton() {
+        viewButton = new JButton("");
         ImageIcon img = new ImageIcon(System.getProperty("user.dir") + "\\assets\\view.png");
         viewButton.setIcon(new ImageIcon(getScaledImage(img.getImage(), 15, 15)));
     }
@@ -65,7 +65,7 @@ public class vehicle {
     }
 
     private void setAvailability(boolean aAvailability) {
-        availability = new JCheckBox("",aAvailability);
+        availability = new JCheckBox("", aAvailability);
         availability.setHorizontalAlignment(SwingConstants.CENTER);
         availability.setBackground(Color.WHITE);
     }
@@ -95,7 +95,7 @@ public class vehicle {
         return (availability.isSelected()) ? "Yes" : "No";
     }
 
-    public Object[] getObject(){
+    public Object[] getObject() {
         return new Object[]{viewButton, getCategory(), getName(), getBrand(), getDateOfProduction(), getIDNumber(), availability};
     }
 

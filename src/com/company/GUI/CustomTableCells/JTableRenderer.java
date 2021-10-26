@@ -4,10 +4,10 @@ import javax.swing.*;
 import javax.swing.table.TableCellRenderer;
 import java.awt.*;
 
-public class JTableButtonRenderer implements TableCellRenderer {
+public class JTableRenderer implements TableCellRenderer {
     private TableCellRenderer defaultRenderer;
 
-    public JTableButtonRenderer(TableCellRenderer renderer) {
+    public JTableRenderer(TableCellRenderer renderer) {
         defaultRenderer = renderer;
     }
 

@@ -20,5 +20,4 @@ public class vehicleLand extends vehicle {
     }
 
     String getTypeOfLandTransport(){return typeOfLandTransport;}
-
 }

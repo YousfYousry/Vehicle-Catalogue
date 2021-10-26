@@ -3,29 +3,25 @@ package com.company.GUI.Pages;
 import com.company.GUI.CustomElements.HintTextField;
 import com.company.GUI.CustomTableCells.ButtonEditor;
 import com.company.GUI.CustomTableCells.CheckBoxEditor;
-import com.company.GUI.CustomTableCells.JTableButtonRenderer;
+import com.company.GUI.CustomTableCells.JTableRenderer;
 import com.company.Records;
 import com.company.vehicle;
 
 import javax.swing.*;
 import javax.swing.table.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 public class DashBoardPage extends JFrame {
     private GridBagConstraints gbc = new GridBagConstraints();
     private JLabel searchLabel = new JLabel("Search: ");
-    private HintTextField searchField = new HintTextField("Enter Name Or ...");
+    private HintTextField searchField = new HintTextField("Enter Name Or ...");// a custom class used to show the hint when the jtext field is empty
 
     public DashBoardPage(String title) {
         setTitle(title);
         setLayout(new GridBagLayout());
-
         addSearch();
-
         addTable();
-
     }
 
     public void viewSearch(boolean view) {
@@ -69,6 +65,7 @@ public class DashBoardPage extends JFrame {
             gbc.fill = GridBagConstraints.HORIZONTAL;
             gbc.insets = new Insets(0, 5, 5, 5);
             add(searchField, gbc);
+
             invalidate();
             validate();
         });
@@ -114,11 +111,12 @@ public class DashBoardPage extends JFrame {
             jt.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
         }
         jt.getColumn("View").setCellEditor(new ButtonEditor());
-        jt.getColumn("View").setCellRenderer(new JTableButtonRenderer(jt.getDefaultRenderer(JButton.class)));
+        jt.getColumn("View").setCellRenderer(new JTableRenderer(jt.getDefaultRenderer(JButton.class)));
         jt.getColumn("Availability").setCellEditor(new CheckBoxEditor());
-        jt.getColumn("Availability").setCellRenderer(new JTableButtonRenderer(jt.getDefaultRenderer(JCheckBox.class)));
+        jt.getColumn("Availability").setCellRenderer(new JTableRenderer(jt.getDefaultRenderer(JCheckBox.class)));
         jt.setUpdateSelectionOnSort(true);
         jt.setRowSelectionAllowed(true);
+//        jt.setColumnSelectionAllowed(false);
         jt.setAutoCreateRowSorter(true);
         jt.setFillsViewportHeight(true);
         JScrollPane scrollPane = new JScrollPane(jt);

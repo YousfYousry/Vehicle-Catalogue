@@ -14,7 +14,7 @@ public class HintTextField extends JTextField {
 //    TitledBorder titledBorder;
     Border loweredbevel;
 
-    public HintTextField(final String hint) {
+    public HintTextField(final String hint) {//
         loweredbevel = BorderFactory.createLoweredBevelBorder();
 //        titledBorder = BorderFactory.createTitledBorder(
 //                loweredbevel, title);
