@@ -51,11 +51,7 @@ public class HintTextField extends JTextField {
                 if (text.trim().length() == 0||text.equals(hint)) {
                     rowSorter.setRowFilter(null);
                 } else {
-                    rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text,1));
-                    rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text,2));
-                    rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text,3));
-                    rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text,4));
-                    rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text,5));
+                    rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text, 1, 2, 3, 4, 5));
                 }
             }
         });
