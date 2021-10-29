@@ -2,12 +2,11 @@ package com.company;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class vehicle {
+public abstract  class vehicle {
     private String category;
     private String name;
     private String brand;
@@ -33,14 +32,10 @@ public class vehicle {
         setDateOfProduction(aDay, aMonth, aYear);
         setIDNumber(aIDNumber);
         setAvailability(aAvailability);
-        setButton();
+        viewButton=getButton();
     }
 
-    private void setButton() {
-        viewButton = new JButton("");
-        ImageIcon img = new ImageIcon(System.getProperty("user.dir") + "\\assets\\view.png");
-        viewButton.setIcon(new ImageIcon(getScaledImage(img.getImage(), 15, 15)));
-    }
+    public abstract JButton getButton();
 
     private void setCategory(String aCategory) {
         this.category = aCategory;
@@ -99,14 +94,4 @@ public class vehicle {
         return new Object[]{viewButton, getCategory(), getName(), getBrand(), getDateOfProduction(), getIDNumber(), availability};
     }
 
-    private Image getScaledImage(Image srcImg, int w, int h) {
-        BufferedImage resizedImg = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g2 = resizedImg.createGraphics();
-
-        g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-        g2.drawImage(srcImg, 0, 0, w, h, null);
-        g2.dispose();
-
-        return resizedImg;
-    }
 }

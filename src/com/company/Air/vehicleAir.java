@@ -1,7 +1,8 @@
 package com.company.Air;
+
 import com.company.vehicle;
 
-public class vehicleAir extends vehicle{
+abstract class vehicleAir extends vehicle{
 
     private String Capacity;
     private String Length;
@@ -33,6 +34,34 @@ public class vehicleAir extends vehicle{
         setGrossWeight("");
         setMaxTakeoffWeight("");
 //        setPowerPlant("");
+    }
+
+    public String getCapacity() {
+        return Capacity;
+    }
+
+    public String getLength() {
+        return Length;
+    }
+
+    public String getHeight() {
+        return Height;
+    }
+
+    public String getVolume() {
+        return Volume;
+    }
+
+    public String getGrossWeight() {
+        return GrossWeight;
+    }
+
+    public String getFuelCapacity() {
+        return FuelCapacity;
+    }
+
+    public String getMaxTakeoffWeight() {
+        return MaxTakeoffWeight;
     }
 
     private void setCapacity(String capacity) {

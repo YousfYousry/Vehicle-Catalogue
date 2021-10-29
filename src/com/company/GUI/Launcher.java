@@ -8,6 +8,10 @@ import java.awt.event.ItemEvent;
 
 public class Launcher {
     private DashBoardPage dashboard = new DashBoardPage("Vehicle Catalogue");
+    private static JCheckBox search = new JCheckBox("Search", true);
+    public static JCheckBox filter = new JCheckBox("Filter", false);
+    private static JCheckBox label = new JCheckBox("Label", true);
+
     public Launcher() {
         //launching dashboard page which is the only page we have so far
         ImageIcon img = new ImageIcon(System.getProperty("user.dir") + "\\assets\\logo.png");
@@ -19,16 +23,14 @@ public class Launcher {
         dashboard.setVisible(true);
         dashboard.setLocationRelativeTo(null);
     }
+
     private void SetDashboardMenu() {
         JMenuBar menuBar = new JMenuBar();
         JMenu file = new JMenu("File"), edit = new JMenu("Edit"), view = new JMenu("View");
         JMenu New = new JMenu("New");
 
-        JCheckBox search = new JCheckBox("Search", true);
         search.addItemListener(e -> dashboard.viewSearch((e.getStateChange() == ItemEvent.SELECTED)));
-        JCheckBox filter = new JCheckBox("Filter", false);
         filter.addItemListener(e -> dashboard.viewFilter((e.getStateChange() == ItemEvent.SELECTED)));
-        JCheckBox label = new JCheckBox("Label", true);
         label.addItemListener(e -> dashboard.viewLabel((e.getStateChange() == ItemEvent.SELECTED)));
         JMenuItem save = new JMenuItem("Save");
         JMenuItem saveAs = new JMenuItem("Save As...");
