@@ -46,7 +46,7 @@ public class DashBoardPage extends JFrame {
             @Override
             public void windowClosing(WindowEvent e) {
 
-                if (Records.getAllRecords() != Records.getOriginal()) {
+                if (Records.hasChanges()) {
                     int result = JOptionPane.showOptionDialog(null, "Want to save your changes?", "Vehicle Catalogue",
                             JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE,
                             null, new Object[]{"Save", "Don't save",

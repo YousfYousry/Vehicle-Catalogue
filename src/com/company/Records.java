@@ -19,6 +19,19 @@ import java.util.Date;
 public class Records {
     private static ArrayList<vehicle> currentRecords = getOriginal();
 
+    public static boolean hasChanges(){
+//        for (vehicle vehicle:currentRecords) {
+//            if(!getOriginal().contains(vehicle)){
+//                System.out.println(vehicle.getName());
+//                return true;
+//            }
+//        }
+
+        System.out.println(getOriginal().get(3).getName().contains(getAllRecords().get(3).getName()));
+//        System.out.println(.iterator());
+        return false;
+    }
+
     public static void addRecord(vehicle vehicle) {
         currentRecords.add(vehicle);
     }
@@ -68,7 +81,7 @@ public class Records {
         currentRecords = getOriginal();
     }
 
-    public static ArrayList<vehicle> getOriginal() {
+    private static ArrayList<vehicle> getOriginal() {
 //        try {
 //            File myObj = new File(System.getProperty("user.dir") + "\\assets\\test.txt");
 //            Scanner myReader = new Scanner(myObj);
