@@ -132,7 +132,9 @@ public class Launcher {
                     JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE,
                     null, new Object[]{"Enter", "Cancel"}, null);
             if (result == 0) {
-                Records.addRecord(getVehicle(insertRecord.getVehicle(),categoryList.getSelectedItem(), nameField.getText(), brandField.getText(), productionDate.getDate().getDay(), productionDate.getDate().getMonth() + 2, productionDate.getDate().getYear(), idField.getText(), availabilityField.isSelected()));
+                Calendar cal = Calendar.getInstance();
+                cal.setTime(productionDate.getDate());
+                Records.addRecord(getVehicle(insertRecord.getVehicle(),categoryList.getSelectedItem(), nameField.getText(), brandField.getText(), cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH), cal.get(Calendar.YEAR), idField.getText(), availabilityField.isSelected()));
                 dashboard.displayAll();
             }
 
