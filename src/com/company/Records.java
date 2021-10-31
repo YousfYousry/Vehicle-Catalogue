@@ -20,15 +20,15 @@ public class Records {
     private static ArrayList<vehicle> currentRecords = getOriginal();
 
     public static boolean hasChanges() {
-        return currentRecords.toString().compareTo(getOriginal().toString()) != 0;
+        return !diff(currentRecords.toString(), getOriginal().toString()).isEmpty();
     }
 
-    private static String diff(String str1, String str2) {//used for trouble shooting
+    private static String diff(String str1, String str2) {
         int i;
-        for(i=0;i<str1.length();i++){
-            if(str1.charAt(i)!=str2.charAt(i)) break;
+        for (i = 0; i < str1.length(); i++) {
+            if (str1.charAt(i) != str2.charAt(i)) break;
         }
-        return str1.substring(i,str1.length());
+        return str1.substring(i, str1.length());
     }
 
     public static void addRecord(vehicle vehicle) {
@@ -78,39 +78,39 @@ public class Records {
 
     public static void reset() {
 
-            currentRecords=getOriginal();
+        currentRecords = getOriginal();
 
     }
 
     public static void setHardCoded() {
-            currentRecords=getHardCoded();
+        currentRecords = getHardCoded();
     }
 
-    private static vehicle getVehicle(ArrayList<String> values){
+    private static vehicle getVehicle(ArrayList<String> values) {
 
         try {
-            if(values.get(0).compareTo("Helicopter")==0){
-                return new Helicopter(values.get(0),values.get(1),values.get(2),getInt(values.get(3)),getInt(values.get(4))+1,getInt(values.get(5)),values.get(6),getBool(values.get(7)),values.get(8),values.get(9),values.get(10),values.get(11),values.get(12),values.get(13),getInt(values.get(14)),getInt(values.get(15)),values.get(16),values.get(17));
-            }else if(values.get(0).compareTo("Plane")==0){
-                return new Plane(values.get(0),values.get(1),values.get(2),getInt(values.get(3)),getInt(values.get(4))+1,getInt(values.get(5)),values.get(6),getBool(values.get(7)),values.get(8),values.get(9),values.get(10),values.get(11),values.get(12),values.get(13),getInt(values.get(14)),values.get(15),values.get(16),getInt(values.get(17)));
-            }else if(values.get(0).compareTo("Rocket")==0){
-                return new Rocket(values.get(0),values.get(1),values.get(2),getInt(values.get(3)),getInt(values.get(4))+1,getInt(values.get(5)),values.get(6),getBool(values.get(7)),values.get(8),values.get(9),values.get(10),values.get(11),values.get(12),values.get(13),values.get(14),values.get(15),values.get(16),getInt(values.get(17)));
-            }else if(values.get(0).compareTo("Bike")==0){
-                return new Bike(values.get(0),values.get(1),values.get(2),getInt(values.get(3)),getInt(values.get(4))+1,getInt(values.get(5)),values.get(6),getBool(values.get(7)),values.get(8),values.get(9),getDouble(values.get(10)),getInt(values.get(11)),getInt(values.get(12)),values.get(13));
-            }else if(values.get(0).compareTo("Car")==0){
-                return new Car(values.get(0),values.get(1),values.get(2),getInt(values.get(3)),getInt(values.get(4))+1,getInt(values.get(5)),values.get(6),getBool(values.get(7)),values.get(8),values.get(9),getDouble(values.get(10)),getInt(values.get(11)),getInt(values.get(12)),values.get(13));
-            }else if(values.get(0).compareTo("Train")==0){
-                return new Train(values.get(0),values.get(1),values.get(2),getInt(values.get(3)),getInt(values.get(4))+1,getInt(values.get(5)),values.get(6),getBool(values.get(7)),values.get(8),getInt(values.get(9)),getInt(values.get(10)),getInt(values.get(11)),getInt(values.get(12)),values.get(13));
-            }else if(values.get(0).compareTo("Kayak")==0){
-                return new Kayak(values.get(0),values.get(1),values.get(2),getInt(values.get(3)),getInt(values.get(4))+1,getInt(values.get(5)),values.get(6),getBool(values.get(7)),values.get(8),values.get(9),getInt(values.get(10)),getInt(values.get(11)),getInt(values.get(12)),getInt(values.get(13)));
-            }else if(values.get(0).compareTo("Shipping Tanker")==0){
-                return new ShippingTanker(values.get(0),values.get(1),values.get(2),getInt(values.get(3)),getInt(values.get(4))+1,getInt(values.get(5)),values.get(6),getBool(values.get(7)),values.get(8),values.get(9),getInt(values.get(10)),getInt(values.get(11)),getInt(values.get(12)),getDouble(values.get(13)));
-            }else if(values.get(0).compareTo("Submarine")==0){
-                return new Submarine(values.get(0),values.get(1),values.get(2),getInt(values.get(3)),getInt(values.get(4))+1,getInt(values.get(5)),values.get(6),getBool(values.get(7)),values.get(8),values.get(9),getDouble(values.get(10)),getInt(values.get(11)),getBool(values.get(12)),getBool(values.get(13)));
-            }else {
+            if (values.get(0).compareTo("Helicopter") == 0) {
+                return new Helicopter(values.get(0), values.get(1), values.get(2), getInt(values.get(3)), getInt(values.get(4)) + 1, getInt(values.get(5)), values.get(6), getBool(values.get(7)), values.get(8), values.get(9), values.get(10), values.get(11), values.get(12), values.get(13), getInt(values.get(14)), getInt(values.get(15)), values.get(16), values.get(17));
+            } else if (values.get(0).compareTo("Plane") == 0) {
+                return new Plane(values.get(0), values.get(1), values.get(2), getInt(values.get(3)), getInt(values.get(4)) + 1, getInt(values.get(5)), values.get(6), getBool(values.get(7)), values.get(8), values.get(9), values.get(10), values.get(11), values.get(12), values.get(13), getInt(values.get(14)), values.get(15), values.get(16), getInt(values.get(17)));
+            } else if (values.get(0).compareTo("Rocket") == 0) {
+                return new Rocket(values.get(0), values.get(1), values.get(2), getInt(values.get(3)), getInt(values.get(4)) + 1, getInt(values.get(5)), values.get(6), getBool(values.get(7)), values.get(8), values.get(9), values.get(10), values.get(11), values.get(12), values.get(13), values.get(14), values.get(15), values.get(16), getInt(values.get(17)));
+            } else if (values.get(0).compareTo("Bike") == 0) {
+                return new Bike(values.get(0), values.get(1), values.get(2), getInt(values.get(3)), getInt(values.get(4)) + 1, getInt(values.get(5)), values.get(6), getBool(values.get(7)), values.get(8), values.get(9), getDouble(values.get(10)), getInt(values.get(11)), getInt(values.get(12)), values.get(13));
+            } else if (values.get(0).compareTo("Car") == 0) {
+                return new Car(values.get(0), values.get(1), values.get(2), getInt(values.get(3)), getInt(values.get(4)) + 1, getInt(values.get(5)), values.get(6), getBool(values.get(7)), values.get(8), values.get(9), getDouble(values.get(10)), getInt(values.get(11)), getInt(values.get(12)), values.get(13));
+            } else if (values.get(0).compareTo("Train") == 0) {
+                return new Train(values.get(0), values.get(1), values.get(2), getInt(values.get(3)), getInt(values.get(4)) + 1, getInt(values.get(5)), values.get(6), getBool(values.get(7)), values.get(8), getInt(values.get(9)), getInt(values.get(10)), getInt(values.get(11)), getInt(values.get(12)), values.get(13));
+            } else if (values.get(0).compareTo("Kayak") == 0) {
+                return new Kayak(values.get(0), values.get(1), values.get(2), getInt(values.get(3)), getInt(values.get(4)) + 1, getInt(values.get(5)), values.get(6), getBool(values.get(7)), values.get(8), values.get(9), getInt(values.get(10)), getInt(values.get(11)), getInt(values.get(12)), getInt(values.get(13)));
+            } else if (values.get(0).compareTo("Shipping Tanker") == 0) {
+                return new ShippingTanker(values.get(0), values.get(1), values.get(2), getInt(values.get(3)), getInt(values.get(4)) + 1, getInt(values.get(5)), values.get(6), getBool(values.get(7)), values.get(8), values.get(9), getInt(values.get(10)), getInt(values.get(11)), getInt(values.get(12)), getDouble(values.get(13)));
+            } else if (values.get(0).compareTo("Submarine") == 0) {
+                return new Submarine(values.get(0), values.get(1), values.get(2), getInt(values.get(3)), getInt(values.get(4)) + 1, getInt(values.get(5)), values.get(6), getBool(values.get(7)), values.get(8), values.get(9), getDouble(values.get(10)), getInt(values.get(11)), getBool(values.get(12)), getBool(values.get(13)));
+            } else {
                 return null;
             }
-        }catch (Exception error) {
+        } catch (Exception error) {
             System.out.println(error.getMessage());
             return null;
         }
@@ -125,8 +125,8 @@ public class Records {
     }
 
     private static boolean getBool(String str) {
-        str  = str.trim().toLowerCase();
-        return str.compareTo("true")==0||str.compareTo("yes")==0;
+        str = str.trim().toLowerCase();
+        return str.compareTo("true") == 0 || str.compareTo("yes") == 0;
     }
 
     private static double getDouble(String str) {
@@ -148,7 +148,7 @@ public class Records {
             }
             myReader.close();
 //            System.out.println(data);
-            ArrayList<vehicle> vehicles=new ArrayList<>();
+            ArrayList<vehicle> vehicles = new ArrayList<>();
             String orig = data.substring(1, data.length() - 1);
             ArrayList<String> myList = new ArrayList<>(Arrays.asList(orig.split(",")));
             for (String recordStr : myList) {
@@ -202,8 +202,7 @@ public class Records {
 
     public static void saveNewOriginal(String fileName) throws FileNotFoundException {
         PrintWriter pw = new PrintWriter(new FileOutputStream(fileName));
-        String str = currentRecords.toString();
-        pw.println(str.substring(1,str.length()));
+        pw.println(currentRecords.toString());
         pw.close();
     }
 

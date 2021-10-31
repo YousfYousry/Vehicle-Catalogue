@@ -1,4 +1,38 @@
-Helicopter
+[Helicopter
+Sikorsky UH-60 Black Hawk
+Sikorsky
+8
+7
+2012
+HC123
+true
+2 Pilot + 12 Passengers
+35.1 ft
+10.3 ft
+579 l
+5300 kg
+5600 kg
+5
+14
+Allison Model 250
+280km/h, Helicopter
+Kikorsky UH-20 Black Bird
+Kikorsky
+18
+7
+2010
+HC124
+false
+2 Pilot + 5 Passengers
+25.1 ft
+8.35 ft
+389 l
+4200 kg
+4500 kg
+4
+7
+Allison Model 210
+220km/h, Helicopter
 Cikorsky UH-20 Black Bat
 Cikorsky
 28
@@ -351,4 +385,21 @@ M
 56.4
 2
 4
-aluminium]]]
+aluminium], Helicopter
+
+
+1
+9
+2021
+
+true
+
+
+
+
+
+
+0
+0
+
+]
