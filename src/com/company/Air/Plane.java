@@ -2,7 +2,6 @@ package com.company.Air;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 
 public class Plane extends vehicleAir {//Source: https://millionmilesecrets.com/guides/difference-between-planes/
     private int numOfDoors;
@@ -17,76 +16,72 @@ public class Plane extends vehicleAir {//Source: https://millionmilesecrets.com/
         this.wheels = "";
         this.numOfEngines = 0;
     }
+   private JTextField capacityField = new JTextField(getCapacity());
+   private JTextField lengthField = new JTextField(getLength());
+   private JTextField heightField = new JTextField(getHeight());
+   private JTextField volumeField = new JTextField(getVolume());
+   private JTextField grossWeightField = new JTextField(getGrossWeight());
+   private JTextField maxTakeoffWeightField = new JTextField(getMaxTakeoffWeight());
+   private JTextField numOfDoorsField = new JTextField(getNumOfDoors());
+   private JTextField noseField = new JTextField(getNose());
+   private JTextField wheelsField = new JTextField(getWheels());
+   private JTextField numOfEnginesField = new JTextField(getNumOfEngines());
 
     @Override
-    public JButton getButton() {
-        JButton view = new JButton("");
-        ImageIcon img = new ImageIcon(System.getProperty("user.dir") + "\\assets\\view.png");
-        view.setIcon(new ImageIcon(getScaledImage(img.getImage(), 15, 15)));
-        view.addActionListener(e -> {
-            JPanel holder = new JPanel();
-            holder.setLayout(new GridLayout(11, 2));
+    public JPanel getView() {
+        JPanel holder = new JPanel();
+        holder.setLayout(new GridLayout(10, 2));
 
-            JLabel capacity = new JLabel("Capacity");
-            JTextField capacityField = new JTextField(getCapacity());
-            JLabel length = new JLabel("Length");
-            JTextField lengthField = new JTextField(getLength());
-            JLabel height = new JLabel("Height");
-            JTextField heightField = new JTextField(getHeight());
-            JLabel volume = new JLabel("Volume");
-            JTextField volumeField = new JTextField(getVolume());
-            JLabel grossWeight = new JLabel("Gross Weight");
-            JTextField grossWeightField = new JTextField(getGrossWeight());
-            JLabel maxTakeoffWeight = new JLabel("Max Take off Weight");
-            JTextField maxTakeoffWeightField = new JTextField(getMaxTakeoffWeight());
-            JLabel numOfDoors = new JLabel("Num Of Doors");
-            JTextField numOfDoorsField = new JTextField(getNumOfDoors());
-            JLabel nose = new JLabel("Nose");
-            JTextField noseField = new JTextField(getNose());
-            JLabel wheels = new JLabel("Wheels");
-            JTextField wheelsField = new JTextField(getWheels());
-            JLabel numOfEngines = new JLabel("Num Of Engines");
-            JTextField numOfEnginesField = new JTextField(getNumOfEngines());
-            JButton delete = new JButton("Delete");
-            JButton update = new JButton("Update");
+        JLabel capacity = new JLabel("Capacity");
+        JLabel length = new JLabel("Length");
+        JLabel height = new JLabel("Height");
+        JLabel volume = new JLabel("Volume");
+        JLabel grossWeight = new JLabel("Gross Weight");
+        JLabel maxTakeoffWeight = new JLabel("Max Take off Weight");
+        JLabel numOfDoors = new JLabel("Num Of Doors");
+        JLabel nose = new JLabel("Nose");
+        JLabel wheels = new JLabel("Wheels");
+        JLabel numOfEngines = new JLabel("Num Of Engines");
+//        JButton delete = new JButton("Delete");
+//        JButton update = new JButton("Update");
 
-            holder.add(capacity);
-            holder.add(capacityField);
-            holder.add(length);
-            holder.add(lengthField);
-            holder.add(height);
-            holder.add(heightField);
-            holder.add(volume);
-            holder.add(volumeField);
-            holder.add(grossWeight);
-            holder.add(grossWeightField);
-            holder.add(maxTakeoffWeight);
-            holder.add(maxTakeoffWeightField);
-            holder.add(numOfDoors);
-            holder.add(numOfDoorsField);
-            holder.add(nose);
-            holder.add(noseField);
-            holder.add(wheels);
-            holder.add(wheelsField);
-            holder.add(numOfEngines);
-            holder.add(numOfEnginesField);
-            holder.add(delete);
-            holder.add(update);
-            JOptionPane.showOptionDialog(null, holder, getCategory() + " Details", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, new Object[]{}, null);
-        });
-        return view;
+        holder.add(capacity);
+        holder.add(capacityField);
+        holder.add(length);
+        holder.add(lengthField);
+        holder.add(height);
+        holder.add(heightField);
+        holder.add(volume);
+        holder.add(volumeField);
+        holder.add(grossWeight);
+        holder.add(grossWeightField);
+        holder.add(maxTakeoffWeight);
+        holder.add(maxTakeoffWeightField);
+        holder.add(numOfDoors);
+        holder.add(numOfDoorsField);
+        holder.add(nose);
+        holder.add(noseField);
+        holder.add(wheels);
+        holder.add(wheelsField);
+        holder.add(numOfEngines);
+        holder.add(numOfEnginesField);
+//        holder.add(delete);
+//        holder.add(update);
+        return holder;
     }
 
-    private Image getScaledImage(Image srcImg, int w, int h) {
-        BufferedImage resizedImg = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g2 = resizedImg.createGraphics();
-
-        g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-        g2.drawImage(srcImg, 0, 0, w, h, null);
-        g2.dispose();
-
-        return resizedImg;
+    public Plane getFields(String aCategory, String aName, String aBrand, int aDay, int aMonth, int aYear, String aIDNumber, boolean aAvailability){
+        return new Plane(aCategory, aName, aBrand, aDay, aMonth, aYear, aIDNumber, aAvailability, capacityField.getText(), lengthField.getText(), heightField.getText(), volumeField.getText(), grossWeightField.getText(), maxTakeoffWeightField.getText(),getInt(numOfDoorsField.getText()),noseField.getText(),wheelsField.getText(),getInt(numOfEnginesField.getText()));
     }
+
+    private int getInt(String str){
+        try {
+            return Integer.parseInt(str);
+        }catch (Exception error){
+            return 0;
+        }
+    }
+
 
     public Plane(String aCategory, String aName, String aBrand, int aDay, int aMonth, int aYear, String aIDNumber, boolean aAvailability, String capacity, String length, String height, String volume, String grossWeight, String maxTakeoffWeight, int numOfDoors, String nose, String wheels, int numOfEngines) {
         super(aCategory, aName, aBrand, aDay, aMonth, aYear, aIDNumber, aAvailability, capacity, length, height, volume, grossWeight, maxTakeoffWeight);
@@ -94,6 +89,16 @@ public class Plane extends vehicleAir {//Source: https://millionmilesecrets.com/
         this.nose = nose;
         this.wheels = wheels;
         this.numOfEngines = numOfEngines;
+        capacityField = new JTextField(getCapacity());
+        lengthField = new JTextField(getLength());
+        heightField = new JTextField(getHeight());
+        volumeField = new JTextField(getVolume());
+        grossWeightField = new JTextField(getGrossWeight());
+        maxTakeoffWeightField = new JTextField(getMaxTakeoffWeight());
+        numOfDoorsField = new JTextField(getNumOfDoors());
+        noseField = new JTextField(getNose());
+        wheelsField = new JTextField(getWheels());
+        numOfEnginesField = new JTextField(getNumOfEngines());
     }
 
     public Plane(int numOfDoors, String nose, String wheels, int numOfEngines) {

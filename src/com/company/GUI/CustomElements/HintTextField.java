@@ -1,22 +1,23 @@
 package com.company.GUI.CustomElements;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
+import com.company.GUI.Pages.DashBoardPage;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
+import java.awt.*;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 public class HintTextField extends JTextField {
 
     private Font gainFont = new Font("Tahoma", Font.PLAIN, 14);
     private Font lostFont = new Font("Tahoma", Font.ITALIC, 14);
 
-    public HintTextField(final String hint,final JTable jTable) {//
+    public HintTextField(final String hint,final JTable jTable,DashBoardPage dashboard) {//
         RowSorter<? extends TableModel> rs = jTable.getRowSorter();
         if (rs == null) {
             jTable.setAutoCreateRowSorter(true);
@@ -53,6 +54,8 @@ public class HintTextField extends JTextField {
                 } else {
                     rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text, 1, 2, 3, 4, 5));
                 }
+
+                dashboard.updateBottomLabel(rowSorter.getViewRowCount());
             }
         });
 

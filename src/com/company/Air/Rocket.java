@@ -2,7 +2,6 @@ package com.company.Air;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 
 public class Rocket extends vehicleAir {//Source: https://en.wikipedia.org/wiki/Comparison_of_orbital_launch_systems
     private String manufacturer;
@@ -10,75 +9,6 @@ public class Rocket extends vehicleAir {//Source: https://en.wikipedia.org/wiki/
     private String firstDateOfFlight;
     private int numOfFailures;
 
-    @Override
-    public JButton getButton() {
-        JButton view = new JButton("");
-        ImageIcon img = new ImageIcon(System.getProperty("user.dir") + "\\assets\\view.png");
-        view.setIcon(new ImageIcon(getScaledImage(img.getImage(), 15, 15)));
-        view.addActionListener(e -> {
-            JPanel holder = new JPanel();
-            holder.setLayout(new GridLayout(11, 2));
-            JLabel capacity = new JLabel("Capacity");
-            JTextField capacityField = new JTextField(getCapacity());
-            JLabel length = new JLabel("Length");
-            JTextField lengthField = new JTextField(getLength());
-            JLabel height = new JLabel("Height");
-            JTextField heightField = new JTextField(getHeight());
-            JLabel volume = new JLabel("Volume");
-            JTextField volumeField = new JTextField(getVolume());
-            JLabel grossWeight = new JLabel("Gross Weight");
-            JTextField grossWeightField = new JTextField(getGrossWeight());
-            JLabel maxTakeoffWeight = new JLabel("Max Take off Weight");
-            JTextField maxTakeoffWeightField = new JTextField(getMaxTakeoffWeight());
-            JLabel manufacturer = new JLabel("Manufacturer");
-            JTextField manufacturerField = new JTextField(getManufacturer());
-            JLabel origin = new JLabel("Origin");
-            JTextField originField = new JTextField(getOrigin());
-            JLabel firstDateOfFlight = new JLabel("First Date Of Flight");
-            JTextField firstDateOfFlightField = new JTextField(getFirstDateOfFlight());
-            JLabel numOfFailures = new JLabel("Num Of Failures");
-            JTextField numOfFailuresField = new JTextField(getNumOfFailures());
-            JButton delete = new JButton("Delete");
-            JButton update = new JButton("Update");
-
-            holder.add(capacity);
-            holder.add(capacityField);
-            holder.add(length);
-            holder.add(lengthField);
-            holder.add(height);
-            holder.add(heightField);
-            holder.add(volume);
-            holder.add(volumeField);
-            holder.add(grossWeight);
-            holder.add(grossWeightField);
-            holder.add(maxTakeoffWeight);
-            holder.add(maxTakeoffWeightField);
-            holder.add(manufacturer);
-            holder.add(manufacturerField);
-            holder.add(origin);
-            holder.add(originField);
-            holder.add(firstDateOfFlight);
-            holder.add(firstDateOfFlightField);
-            holder.add(numOfFailures);
-            holder.add(numOfFailuresField);
-            holder.add(delete);
-            holder.add(update);
-
-            JOptionPane.showOptionDialog(null, holder, getCategory() + " Details", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, new Object[]{}, null);
-        });
-        return view;
-    }
-
-    private Image getScaledImage(Image srcImg, int w, int h) {
-        BufferedImage resizedImg = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g2 = resizedImg.createGraphics();
-
-        g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-        g2.drawImage(srcImg, 0, 0, w, h, null);
-        g2.dispose();
-
-        return resizedImg;
-    }
 
     public Rocket() {
         super();
@@ -88,12 +18,88 @@ public class Rocket extends vehicleAir {//Source: https://en.wikipedia.org/wiki/
         this.numOfFailures = 0;
     }
 
+    private JTextField capacityField = new JTextField(getCapacity());
+    private JTextField lengthField = new JTextField(getLength());
+    private JTextField heightField = new JTextField(getHeight());
+    private JTextField volumeField = new JTextField(getVolume());
+    private JTextField grossWeightField = new JTextField(getGrossWeight());
+    private JTextField maxTakeoffWeightField = new JTextField(getMaxTakeoffWeight());
+    private JTextField manufacturerField = new JTextField(getManufacturer());
+    private JTextField originField = new JTextField(getOrigin());
+    private JTextField firstDateOfFlightField = new JTextField(getFirstDateOfFlight());
+    private JTextField numOfFailuresField = new JTextField(getNumOfFailures());
+
+    @Override
+    public JPanel getView() {
+        JPanel holder = new JPanel();
+        holder.setLayout(new GridLayout(10, 2));
+        JLabel capacity = new JLabel("Capacity");
+        JLabel length = new JLabel("Length");
+        JLabel height = new JLabel("Height");
+        JLabel volume = new JLabel("Volume");
+        JLabel grossWeight = new JLabel("Gross Weight");
+        JLabel maxTakeoffWeight = new JLabel("Max Take off Weight");
+        JLabel manufacturer = new JLabel("Manufacturer");
+        JLabel origin = new JLabel("Origin");
+        JLabel firstDateOfFlight = new JLabel("First Date Of Flight");
+        JLabel numOfFailures = new JLabel("Num Of Failures");
+//        JButton delete = new JButton("Delete");
+//        JButton update = new JButton("Update");
+
+        holder.add(capacity);
+        holder.add(capacityField);
+        holder.add(length);
+        holder.add(lengthField);
+        holder.add(height);
+        holder.add(heightField);
+        holder.add(volume);
+        holder.add(volumeField);
+        holder.add(grossWeight);
+        holder.add(grossWeightField);
+        holder.add(maxTakeoffWeight);
+        holder.add(maxTakeoffWeightField);
+        holder.add(manufacturer);
+        holder.add(manufacturerField);
+        holder.add(origin);
+        holder.add(originField);
+        holder.add(firstDateOfFlight);
+        holder.add(firstDateOfFlightField);
+        holder.add(numOfFailures);
+        holder.add(numOfFailuresField);
+//        holder.add(delete);
+//        holder.add(update);
+        return holder;
+    }
+
+    public Rocket getFields(String aCategory, String aName, String aBrand, int aDay, int aMonth, int aYear, String aIDNumber, boolean aAvailability) {
+        return new Rocket(aCategory, aName, aBrand, aDay, aMonth, aYear, aIDNumber, aAvailability, capacityField.getText(), lengthField.getText(), heightField.getText(), volumeField.getText(), grossWeightField.getText(), maxTakeoffWeightField.getText(), manufacturerField.getText(), originField.getText(), firstDateOfFlightField.getText(), getInt(numOfFailuresField.getText()));
+    }
+
+    private int getInt(String str) {
+        try {
+            return Integer.parseInt(str);
+        } catch (Exception error) {
+            return 0;
+        }
+    }
+
     public Rocket(String aCategory, String aName, String aBrand, int aDay, int aMonth, int aYear, String aIDNumber, boolean aAvailability, String capacity, String length, String height, String volume, String grossWeight, String maxTakeoffWeight, String manufacturer, String origin, String firstDateOfFlight, int numOfFailures) {
         super(aCategory, aName, aBrand, aDay, aMonth, aYear, aIDNumber, aAvailability, capacity, length, height, volume, grossWeight, maxTakeoffWeight);
         this.manufacturer = manufacturer;
         this.origin = origin;
         this.firstDateOfFlight = firstDateOfFlight;
         this.numOfFailures = numOfFailures;
+
+        capacityField = new JTextField(getCapacity());
+        lengthField = new JTextField(getLength());
+        heightField = new JTextField(getHeight());
+        volumeField = new JTextField(getVolume());
+        grossWeightField = new JTextField(getGrossWeight());
+        maxTakeoffWeightField = new JTextField(getMaxTakeoffWeight());
+        manufacturerField = new JTextField(getManufacturer());
+        originField = new JTextField(getOrigin());
+        firstDateOfFlightField = new JTextField(getFirstDateOfFlight());
+        numOfFailuresField = new JTextField(getNumOfFailures());
     }
 
     public Rocket(String manufacturer, String origin, String firstDateOfFlight, int numOfFailures) {

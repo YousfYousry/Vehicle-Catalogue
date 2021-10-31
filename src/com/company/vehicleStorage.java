@@ -85,9 +85,9 @@ public class vehicleStorage {
         ArrayList<vehicle> allVehiclesByDateOfProduction= new ArrayList<vehicle>();
         String targetDateString=targetDate.getDay()+"-"+targetDate.getMonth()+"-"+targetDate.getYear();
         for(vehicle v: allVehicles){
-            if(v.getDateOfProduction().equalsIgnoreCase(targetDateString)){
-                allVehiclesByDateOfProduction.add(v);
-            }
+//            if(v.getDateOfProduction().equalsIgnoreCase(targetDateString)){
+//                allVehiclesByDateOfProduction.add(v);
+//            }
         }
 
         return new Iterator<vehicle>(){

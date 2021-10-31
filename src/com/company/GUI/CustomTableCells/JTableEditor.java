@@ -4,13 +4,13 @@ import javax.swing.*;
 import javax.swing.table.TableCellEditor;
 import java.awt.*;
 
-public class CheckBoxEditor extends AbstractCellEditor implements TableCellEditor {
-    private JCheckBox checkBox;
+public class JTableEditor extends AbstractCellEditor implements TableCellEditor {
+    private Component button;
 
     public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
         // in your case e.g. a JButton
-        checkBox = (JCheckBox) value;
-        return checkBox;
+        button = (Component) value;
+        return button;
     }
 
     /**
@@ -21,7 +21,8 @@ public class CheckBoxEditor extends AbstractCellEditor implements TableCellEdito
      * @return Object
      */
     public Object getCellEditorValue() {
-        return checkBox;
+
+        return button;
     }
 
     // Methods should not be overriden
@@ -35,4 +36,3 @@ public class CheckBoxEditor extends AbstractCellEditor implements TableCellEdito
         return true;
     }
 }
-

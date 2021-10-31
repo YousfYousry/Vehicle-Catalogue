@@ -9,10 +9,10 @@ abstract class vehicleAir extends vehicle{
     private String Height;
     private String Volume;
     private String GrossWeight;
-    private String FuelCapacity;
+//    private String FuelCapacity;
     private String MaxTakeoffWeight;
 
-    public vehicleAir(String aCategory, String aName, String aBrand, int aDay, int aMonth, int aYear, String aIDNumber, boolean aAvailability, String capacity, String length, String height, String volume, String grossWeight, String maxTakeoffWeight) {
+    vehicleAir(String aCategory, String aName, String aBrand, int aDay, int aMonth, int aYear, String aIDNumber, boolean aAvailability, String capacity, String length, String height, String volume, String grossWeight, String maxTakeoffWeight) {
         super(aCategory, aName, aBrand, aDay, aMonth, aYear, aIDNumber, aAvailability);
         setCapacity(capacity);
         setLength(length);
@@ -36,31 +36,31 @@ abstract class vehicleAir extends vehicle{
 //        setPowerPlant("");
     }
 
-    public String getCapacity() {
+    String getCapacity() {
         return Capacity;
     }
 
-    public String getLength() {
+    String getLength() {
         return Length;
     }
 
-    public String getHeight() {
+    String getHeight() {
         return Height;
     }
 
-    public String getVolume() {
+    String getVolume() {
         return Volume;
     }
 
-    public String getGrossWeight() {
+    String getGrossWeight() {
         return GrossWeight;
     }
 
-    public String getFuelCapacity() {
-        return FuelCapacity;
-    }
+//    public String getFuelCapacity() {
+//        return FuelCapacity;
+//    }
 
-    public String getMaxTakeoffWeight() {
+    String getMaxTakeoffWeight() {
         return MaxTakeoffWeight;
     }
 
@@ -90,6 +90,12 @@ abstract class vehicleAir extends vehicle{
 
     private void setMaxTakeoffWeight(String maxTakeoffWeight) {
         this.MaxTakeoffWeight = maxTakeoffWeight;
+    }
+
+
+    @Override
+    public String getParentType(){
+        return "air";
     }
 //
 //    private void setPowerPlant(String powerPlant) {

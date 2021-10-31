@@ -1,0 +1,145 @@
+[com.company.Air.Helicopter@4bc805b7, com.company.Air.Helicopter@1cff6fd, com.company.Air.Helicopter@63181a26, com.company.Air.Plane@15d6cf0a, com.company.Air.Plane@1eb895ba, com.company.Air.Plane@60bee08e, com.company.Air.Rocket@43541f95, com.company.Air.Rocket@6059366a, com.company.Air.Rocket@3a166a9e, com.company.Water.Submarine@2dbb47c2, com.company.Water.Submarine@4e705d57, com.company.Water.Submarine@6733d895, com.company.Water.ShippingTanker@6ef81c77, com.company.Water.ShippingTanker@198ac33d, com.company.Water.ShippingTanker@55dcafbe, 
+Category: Kayak
+Name: NuCanoe fishing 
+Brand: Dutchland
+Date Of Production: Fri Jan 15 00:00:00 SRET 2016
+ID Number: KY678
+Availability: false
+Type of Water Transport: Inland water 
+Kayak Model: Wood Duck
+Hull Specs: 36
+Maximum Paddler Weight: 200
+Maximum Shoe Size: 13
+Maximum Payload: 250, 
+Category: Kayak
+Name: LIFETIME LANCER 100
+Brand: Lifetime
+Date Of Production: Sun Dec 15 00:00:00 SRET 2019
+ID Number: KY679
+Availability: false
+Type of Water Transport: Inland water 
+Kayak Model: Wood Duck 2
+Hull Specs: 38
+Maximum Paddler Weight: 202
+Maximum Shoe Size: 15
+Maximum Payload: 260, 
+Category: Kayak
+Name: Ventura Inflatable 
+Brand: Bestway
+Date Of Production: Fri Jan 25 00:00:00 SRET 2019
+ID Number: KY680
+Availability: true
+Type of Water Transport: Inland water 
+Kayak Model: Pax 20
+Hull Specs: 40
+Maximum Paddler Weight: 212
+Maximum Shoe Size: 18
+Maximum Payload: 300, 
+Category: Car
+Name: Vios
+Brand: Toyota
+Date Of Production: Sun Nov 15 00:00:00 SRET 2020
+ID Number: CR901
+Availability: false
+Type of Land Transport: Road
+Car Model: GX
+Boot size: 300.0
+Number of seat: 5
+Number of airbag: 5
+Type of car: Sedan, 
+Category: Car
+Name: City
+Brand: Honda
+Date Of Production: Tue May 25 00:00:00 SRET 2021
+ID Number: CR902
+Availability: true
+Type of Land Transport: Road
+Car Model: S+
+Boot size: 320.0
+Number of seat: 5
+Number of airbag: 6
+Type of car: Hatchback, 
+Category: Car
+Name: Mustang
+Brand: Ford
+Date Of Production: Tue Jan 15 00:00:00 SRET 2019
+ID Number: CR903
+Availability: true
+Type of Land Transport: Road
+Car Model: A
+Boot size: 250.0
+Number of seat: 4
+Number of airbag: 8
+Type of car: Coupe, 
+Category: Train
+Name: Sirio Florence
+Brand: Hitachi
+Date Of Production: Mon Nov 15 00:00:00 SRET 2010
+ID Number: TR234
+Availability: true
+Type of Land Transport: Track
+Maximum speed: 300mph
+Long : 12meter
+Number of passenger: 35
+Number of body: 3
+Type of Train: Tram, 
+Category: Train
+Name: Sirio Zhuhai 
+Brand: Toshiba
+Date Of Production: Wed Oct 05 00:00:00 SRET 2011
+ID Number: TR234
+Availability: true
+Type of Land Transport: Track
+Maximum speed: 298mph
+Long : 11meter
+Number of passenger: 45
+Number of body: 4
+Type of Train: Tram, 
+Category: Train
+Name: Sirio Turin 
+Brand: Sonnic
+Date Of Production: Wed Jan 25 00:00:00 SRET 2012
+ID Number: TR235
+Availability: false
+Type of Land Transport: Track
+Maximum speed: 292mph
+Long : 10meter
+Number of passenger: 55
+Number of body: 5
+Type of Train: Tram, 
+Category: Bike
+Name: PARALANE 9.8
+Brand: Focus
+Date Of Production: Mon Nov 27 00:00:00 SRET 2017
+ID Number: BK234
+Availability: true
+Type of Land Transport: Road
+Frame size: XL
+Handlebar Width: 72.5cm
+Number of seat: 1
+Number of gear: 5
+Frame material: carbon, 
+Category: Bike
+Name: ATLAS CARBON
+Brand: Alchemy 
+Date Of Production: Tue May 22 00:00:00 SRET 2018
+ID Number: BK235
+Availability: true
+Type of Land Transport: Road
+Frame size: L
+Handlebar Width: 65.7cm
+Number of seat: 2
+Number of gear: 4
+Frame material: carbon, 
+Category: Bike
+Name: PLANET 6.9
+Brand: Jorden 
+Date Of Production: Thu May 28 00:00:00 SRET 2020
+ID Number: BK236
+Availability: false
+Type of Land Transport: Road
+Frame size: M
+Handlebar Width: 56.4cm
+Number of seat: 2
+Number of gear: 4
+Frame material: aluminium]

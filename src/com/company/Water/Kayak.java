@@ -2,7 +2,6 @@ package com.company.Water;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 
 public class Kayak extends vehicleSea{
     private String kayakModel;
@@ -19,74 +18,73 @@ public class Kayak extends vehicleSea{
         setMaxShoeSize(0);
         setMaxPayload(0);
     }
+    private JTextField aTypeOfWaterTransportField = new JTextField(getTypeOfWaterTransport());
+    private JTextField aKayakModelField = new JTextField(getKayakModel());
+    private JTextField aHullSpecsField = new JTextField(getHullSpecs());
+    private JTextField aMaxPaddlerWeightField = new JTextField(getMaxPaddlerWeight());
+    private JTextField aMaxShoeSizeField = new JTextField(getMaxShoeSize());
+    private JTextField aMaxPayloadField = new JTextField(getMaxPayload());
 
     @Override
-    public JButton getButton()  {
-        JButton view = new JButton("");
-        ImageIcon img = new ImageIcon(System.getProperty("user.dir") + "\\assets\\view.png");
-        view.setIcon(new ImageIcon(getScaledImage(img.getImage(), 15, 15)));
-        view.addActionListener(e->{
-            JPanel holder = new JPanel();
-            holder.setLayout(new GridLayout(7,2));
+    public JPanel getView() {
+        JPanel holder = new JPanel();
+        holder.setLayout(new GridLayout(6,2));
 
 
-            JLabel aTypeOfWaterTransport = new JLabel("Type Of Water Transport");
-            JTextField aTypeOfWaterTransportField = new JTextField(getTypeOfWaterTransport());
-            JLabel aKayakModel = new JLabel("Kayak Model");
-            JTextField aKayakModelField = new JTextField(getKayakModel());
-            JLabel aHullSpecs = new JLabel("Hull Specs");
-            JTextField aHullSpecsField = new JTextField(getHullSpecs());
-            JLabel aMaxPaddlerWeight = new JLabel("Max Paddler Weight");
-            JTextField aMaxPaddlerWeightField = new JTextField(getMaxPaddlerWeight());
-            JLabel aMaxShoeSize = new JLabel("Max Shoe Size");
-            JTextField aMaxShoeSizeField = new JTextField(getMaxShoeSize());
-            JLabel aMaxPayload = new JLabel("Max Pay load");
-            JTextField aMaxPayloadField = new JTextField(getMaxPayload());
+        JLabel aTypeOfWaterTransport = new JLabel("Type Of Water Transport");
+        JLabel aKayakModel = new JLabel("Kayak Model");
+        JLabel aHullSpecs = new JLabel("Hull Specs");
+        JLabel aMaxPaddlerWeight = new JLabel("Max Paddler Weight");
+        JLabel aMaxShoeSize = new JLabel("Max Shoe Size");
+        JLabel aMaxPayload = new JLabel("Max Pay load");
 
-            JButton delete = new JButton("Delete");
-            JButton update = new JButton("Update");
+//        JButton delete = new JButton("Delete");
+//        JButton update = new JButton("Update");
 
-            holder.add(aTypeOfWaterTransport);
-            holder.add(aTypeOfWaterTransportField);
-            holder.add(aKayakModel);
-            holder.add(aKayakModelField);
-            holder.add(aHullSpecs);
-            holder.add(aHullSpecsField);
-            holder.add(aMaxPaddlerWeight);
-            holder.add(aMaxPaddlerWeightField);
-            holder.add(aMaxShoeSize);
-            holder.add(aMaxShoeSizeField);
-            holder.add(aMaxPayload);
-            holder.add(aMaxPayloadField);
+        holder.add(aTypeOfWaterTransport);
+        holder.add(aTypeOfWaterTransportField);
+        holder.add(aKayakModel);
+        holder.add(aKayakModelField);
+        holder.add(aHullSpecs);
+        holder.add(aHullSpecsField);
+        holder.add(aMaxPaddlerWeight);
+        holder.add(aMaxPaddlerWeightField);
+        holder.add(aMaxShoeSize);
+        holder.add(aMaxShoeSizeField);
+        holder.add(aMaxPayload);
+        holder.add(aMaxPayloadField);
 
 
-            holder.add(delete);
-            holder.add(update);
-            JOptionPane.showOptionDialog(null, holder, getCategory() + " Details", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, new Object[]{}, null);
-        });
-        return view;
+//        holder.add(delete);
+//        holder.add(update);
+        return holder;
     }
 
-    private Image getScaledImage(Image srcImg, int w, int h) {
-        BufferedImage resizedImg = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g2 = resizedImg.createGraphics();
-
-        g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-        g2.drawImage(srcImg, 0, 0, w, h, null);
-        g2.dispose();
-
-        return resizedImg;
+    public Kayak getFields(String aCategory, String aName, String aBrand, int aDay, int aMonth, int aYear, String aIDNumber, boolean aAvailability) {
+        return new Kayak(aCategory, aName, aBrand, aDay, aMonth, aYear, aIDNumber, aAvailability, aTypeOfWaterTransportField.getText(), aKayakModelField.getText(), getInt(aHullSpecsField.getText()), getInt(aMaxPaddlerWeightField.getText()), getInt(aMaxShoeSizeField.getText()), getInt(aMaxPayloadField.getText()));
     }
 
-    public Kayak(String aCategory, String aName, String aBrand, int aDay, int aMonth, int aYear, String aIDNumber,
-                 boolean aAvailability, String aTypeOfWaterTransport,String aKayakModel, int aHullSpecs,
-                 int aMaxPaddlerWeight, int aMaxShoeSize, int aMaxPayload){
+    private int getInt(String str) {
+        try {
+            return Integer.parseInt(str);
+        } catch (Exception error) {
+            return 0;
+        }
+    }
+
+    public Kayak(String aCategory, String aName, String aBrand, int aDay, int aMonth, int aYear, String aIDNumber, boolean aAvailability, String aTypeOfWaterTransport,String aKayakModel, int aHullSpecs, int aMaxPaddlerWeight, int aMaxShoeSize, int aMaxPayload){
         super(aCategory, aName, aBrand, aDay, aMonth, aYear, aIDNumber, aAvailability, aTypeOfWaterTransport);
         setKayakModel(aKayakModel);
         setHullSpecs(aHullSpecs);
         setMaxPaddlerWeight(aMaxPaddlerWeight);
         setMaxShoeSize(aMaxShoeSize);
         setMaxPayload(aMaxPayload);
+        aTypeOfWaterTransportField = new JTextField(getTypeOfWaterTransport());
+        aKayakModelField = new JTextField(getKayakModel());
+        aHullSpecsField = new JTextField(getHullSpecs());
+        aMaxPaddlerWeightField = new JTextField(getMaxPaddlerWeight());
+        aMaxShoeSizeField = new JTextField(getMaxShoeSize());
+        aMaxPayloadField = new JTextField(getMaxPayload());
     }
 
     public void setKayakModel(String aKayakModel){kayakModel=aKayakModel;}
