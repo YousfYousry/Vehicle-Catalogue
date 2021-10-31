@@ -38,7 +38,7 @@ public class DashBoardPage extends JFrame {
     public DashBoardPage(String title) {
         setTitle(title);
         setLayout(new GridBagLayout());
-        searchField = new HintTextField("Enter Name Or ...", showTable(), this);
+        searchField = new HintTextField("Enter Category Or Name or Brand or ID number(More search option in filter)", showTable(), this);
         initFilter();
         showSearch();
         showLabel();
