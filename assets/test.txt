@@ -1,145 +1,354 @@
-[com.company.Air.Helicopter@4bc805b7, com.company.Air.Helicopter@1cff6fd, com.company.Air.Helicopter@63181a26, com.company.Air.Plane@15d6cf0a, com.company.Air.Plane@1eb895ba, com.company.Air.Plane@60bee08e, com.company.Air.Rocket@43541f95, com.company.Air.Rocket@6059366a, com.company.Air.Rocket@3a166a9e, com.company.Water.Submarine@2dbb47c2, com.company.Water.Submarine@4e705d57, com.company.Water.Submarine@6733d895, com.company.Water.ShippingTanker@6ef81c77, com.company.Water.ShippingTanker@198ac33d, com.company.Water.ShippingTanker@55dcafbe, 
-Category: Kayak
-Name: NuCanoe fishing 
-Brand: Dutchland
-Date Of Production: Fri Jan 15 00:00:00 SRET 2016
-ID Number: KY678
-Availability: false
-Type of Water Transport: Inland water 
-Kayak Model: Wood Duck
-Hull Specs: 36
-Maximum Paddler Weight: 200
-Maximum Shoe Size: 13
-Maximum Payload: 250, 
-Category: Kayak
-Name: LIFETIME LANCER 100
-Brand: Lifetime
-Date Of Production: Sun Dec 15 00:00:00 SRET 2019
-ID Number: KY679
-Availability: false
-Type of Water Transport: Inland water 
-Kayak Model: Wood Duck 2
-Hull Specs: 38
-Maximum Paddler Weight: 202
-Maximum Shoe Size: 15
-Maximum Payload: 260, 
-Category: Kayak
-Name: Ventura Inflatable 
-Brand: Bestway
-Date Of Production: Fri Jan 25 00:00:00 SRET 2019
-ID Number: KY680
-Availability: true
-Type of Water Transport: Inland water 
-Kayak Model: Pax 20
-Hull Specs: 40
-Maximum Paddler Weight: 212
-Maximum Shoe Size: 18
-Maximum Payload: 300, 
-Category: Car
-Name: Vios
-Brand: Toyota
-Date Of Production: Sun Nov 15 00:00:00 SRET 2020
-ID Number: CR901
-Availability: false
-Type of Land Transport: Road
-Car Model: GX
-Boot size: 300.0
-Number of seat: 5
-Number of airbag: 5
-Type of car: Sedan, 
-Category: Car
-Name: City
-Brand: Honda
-Date Of Production: Tue May 25 00:00:00 SRET 2021
-ID Number: CR902
-Availability: true
-Type of Land Transport: Road
-Car Model: S+
-Boot size: 320.0
-Number of seat: 5
-Number of airbag: 6
-Type of car: Hatchback, 
-Category: Car
-Name: Mustang
-Brand: Ford
-Date Of Production: Tue Jan 15 00:00:00 SRET 2019
-ID Number: CR903
-Availability: true
-Type of Land Transport: Road
-Car Model: A
-Boot size: 250.0
-Number of seat: 4
-Number of airbag: 8
-Type of car: Coupe, 
-Category: Train
-Name: Sirio Florence
-Brand: Hitachi
-Date Of Production: Mon Nov 15 00:00:00 SRET 2010
-ID Number: TR234
-Availability: true
-Type of Land Transport: Track
-Maximum speed: 300mph
-Long : 12meter
-Number of passenger: 35
-Number of body: 3
-Type of Train: Tram, 
-Category: Train
-Name: Sirio Zhuhai 
-Brand: Toshiba
-Date Of Production: Wed Oct 05 00:00:00 SRET 2011
-ID Number: TR234
-Availability: true
-Type of Land Transport: Track
-Maximum speed: 298mph
-Long : 11meter
-Number of passenger: 45
-Number of body: 4
-Type of Train: Tram, 
-Category: Train
-Name: Sirio Turin 
-Brand: Sonnic
-Date Of Production: Wed Jan 25 00:00:00 SRET 2012
-ID Number: TR235
-Availability: false
-Type of Land Transport: Track
-Maximum speed: 292mph
-Long : 10meter
-Number of passenger: 55
-Number of body: 5
-Type of Train: Tram, 
-Category: Bike
-Name: PARALANE 9.8
-Brand: Focus
-Date Of Production: Mon Nov 27 00:00:00 SRET 2017
-ID Number: BK234
-Availability: true
-Type of Land Transport: Road
-Frame size: XL
-Handlebar Width: 72.5cm
-Number of seat: 1
-Number of gear: 5
-Frame material: carbon, 
-Category: Bike
-Name: ATLAS CARBON
-Brand: Alchemy 
-Date Of Production: Tue May 22 00:00:00 SRET 2018
-ID Number: BK235
-Availability: true
-Type of Land Transport: Road
-Frame size: L
-Handlebar Width: 65.7cm
-Number of seat: 2
-Number of gear: 4
-Frame material: carbon, 
-Category: Bike
-Name: PLANET 6.9
-Brand: Jorden 
-Date Of Production: Thu May 28 00:00:00 SRET 2020
-ID Number: BK236
-Availability: false
-Type of Land Transport: Road
-Frame size: M
-Handlebar Width: 56.4cm
-Number of seat: 2
-Number of gear: 4
-Frame material: aluminium]
+Helicopter
+Cikorsky UH-20 Black Bat
+Cikorsky
+28
+8
+2011
+HC125
+true
+2 Pilot + 6 Passengers
+27.5 ft
+9.3 ft
+489 l
+5200 kg
+5300 kg
+5
+14
+Allison Model 220
+250km/h, Plane
+Hawker Hurricane
+MIC Airplane
+9
+8
+2009
+AR456
+true
+1 Pilot
+135.1 ft
+110.3 ft
+1579 l
+15300 kg
+15600 kg
+2
+rounded nose
+Armory AW32403
+1, Plane
+B-52 Stratofortress
+ABB Airplane
+19
+8
+2003
+AR457
+true
+2 Pilot
+134.5 ft
+102.3 ft
+1539 l
+14300 kg
+14600 kg
+2
+pointed nose
+Armory AW31011
+2, Plane
+MiG-21 fighter
+LLA Airplane
+14
+8
+2005
+AR458
+false
+1 Pilot
+122.6 ft
+105.3 ft
+1559 l
+14500 kg
+14680 kg
+2
+rounded nose
+Armory AW32022
+1, Rocket
+Firefly Alpha
+Firefly
+2
+1
+2002
+RK787
+true
+1 Pilot
+1135.1 ft
+1110.3 ft
+11579 l
+115300 kg
+115600 kg
+Firefly Aerospace
+United State
+2021
+1, Rocket
+Lirefly Beta
+Lirefly
+12
+1
+2012
+RK788
+false
+1 Pilot
+1035.2 ft
+1210.4 ft
+12579 l
+125300 kg
+117000 kg
+Lirefly Aerospace
+Malaysia
+2020
+5, Rocket
+Virefly Alpha
+Virefly
+2
+11
+2014
+RK789
+true
+1 Pilot
+1155.4 ft
+1010.5 ft
+15579 l
+119300 kg
+12000 kg
+Virefly Aerospace
+Japan
+2019
+1, Submarine
+W-Sub3
+Bringe
+1
+11
+2012
+SB012
+true
+Ocean water
+Ballistic missile submarines
+3400.0
+70
+Yes
+Yes, Submarine
+NOVA Semi-Submarine
+Subvers
+12
+11
+2011
+SB013
+true
+Ocean water
+Cruise missile submarines
+3500.0
+80
+No
+Yes, Submarine
+Seabreacher-Z Model
+Dolphinics
+10
+11
+2010
+SB014
+false
+Ocean water
+Midget submarines
+2400.0
+50
+Yes
+No, Shipping Tanker
+PACIFIC 08
+ITC CORP
+12
+9
+2012
+TK345
+false
+Ocean water
+Panamax
+205
+29
+16
+50000.0, Shipping Tanker
+Stena Palva
+Brodosplit
+22
+11
+2002
+TK346
+true
+Ocean water
+Aframax
+245
+34
+20
+80000.0, Shipping Tanker
+PROSPER PHOENIX
+MITSUI
+10
+9
+2010
+TK347
+true
+Ocean water
+Suezmax
+285
+45
+23
+180000.0, Kayak
+NuCanoe fishing
+Dutchland
+15
+0
+2016
+KY678
+false
+Inland water
+Wood Duck
+36
+200
+13
+250, Kayak
+LIFETIME LANCER 100
+Lifetime
+15
+11
+2019
+KY679
+false
+Inland water
+Wood Duck 2
+38
+202
+15
+260, Kayak
+Ventura Inflatable
+Bestway
+25
+0
+2019
+KY680
+true
+Inland water
+Pax 20
+40
+212
+18
+300, Car
+Vios
+Toyota
+15
+10
+2020
+CR901
+false
+Road
+GX
+300.0
+5
+5
+Sedan, Car
+City
+Honda
+25
+4
+2021
+CR902
+true
+Road
+S+
+320.0
+5
+6
+Hatchback, Car
+Mustang
+Ford
+15
+0
+2019
+CR903
+true
+Road
+A
+250.0
+4
+8
+Coupe, Train
+Sirio Florence
+Hitachi
+15
+10
+2010
+TR234
+true
+Track
+300
+12
+35
+3
+Tram, Train
+Sirio Zhuhai
+Toshiba
+5
+9
+2011
+TR234
+true
+Track
+298
+11
+45
+4
+Tram, Train
+Sirio Turin
+Sonnic
+25
+0
+2012
+TR235
+false
+Track
+292
+10
+55
+5
+Tram, Bike
+PARALANE 9.8
+Focus
+27
+10
+2017
+BK234
+true
+Road
+XL
+72.5
+1
+5
+carbon, Bike
+ATLAS CARBON
+Alchemy
+22
+4
+2018
+BK235
+true
+Road
+L
+65.7
+2
+4
+carbon, Bike
+PLANET 6.9
+Jorden
+28
+4
+2020
+BK236
+false
+Road
+M
+56.4
+2
+4
+aluminium]]]

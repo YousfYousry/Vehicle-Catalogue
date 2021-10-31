@@ -2,6 +2,7 @@ package com.company.Water;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Calendar;
 
 public class ShippingTanker extends vehicleSea{
     private String shippingTankerClass;
@@ -106,4 +107,24 @@ public class ShippingTanker extends vehicleSea{
     public String getDraft(){return     Integer.toString(draft);}
     public String getDeadWeightTons(){return Double.toString(deadWeightTons);}
 
+    @Override
+    public String toString() {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(super.getDateOfProduction());
+
+        return super.getCategory()+"\n"+
+                super.getName()+"\n"+
+                super.getBrand()+"\n"+
+                cal.get(Calendar.DAY_OF_MONTH)+"\n"+
+                cal.get(Calendar.MONTH)+"\n"+
+                cal.get(Calendar.YEAR)+"\n"+
+                super.getIDNumber()+"\n"+
+                super.getAvailability()+"\n"+
+                super.getTypeOfWaterTransport()+"\n"+
+                getShippingTankerClass()+"\n"+
+                getLength()+"\n"+
+                getBeam()+"\n"+
+                getDraft()+"\n"+
+                getDeadWeightTons();
+    }
 }

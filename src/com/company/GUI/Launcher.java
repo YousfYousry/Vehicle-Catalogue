@@ -50,10 +50,14 @@ public class Launcher {
         label.addItemListener(e -> dashboard.viewLabel((e.getStateChange() == ItemEvent.SELECTED)));
         JMenuItem save = new JMenuItem("Save");
 //        JMenuItem saveAs = new JMenuItem("Save As...");
-        JMenuItem Import = new JMenuItem("Import");
+        JMenuItem Import = new JMenuItem("Import hard coded Records");
         JMenuItem record = new JMenuItem("Record");
         JMenuItem reset = new JMenuItem("Reset");
         JMenuItem deleteAll = new JMenuItem("Delete All");
+        Import.addActionListener(e -> {
+            Records.setHardCoded();
+            dashboard.displayAll();
+        });
         reset.addActionListener(e -> {
             Records.reset();
             dashboard.displayAll();
@@ -137,7 +141,6 @@ public class Launcher {
                 Records.addRecord(getVehicle(insertRecord.getVehicle(),categoryList.getSelectedItem(), nameField.getText(), brandField.getText(), cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH), cal.get(Calendar.YEAR), idField.getText(), availabilityField.isSelected()));
                 dashboard.displayAll();
             }
-
         });
 
 

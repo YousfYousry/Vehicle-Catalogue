@@ -2,6 +2,7 @@ package com.company.Air;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Calendar;
 
 public class Plane extends vehicleAir {//Source: https://millionmilesecrets.com/guides/difference-between-planes/
     private int numOfDoors;
@@ -139,5 +140,31 @@ public class Plane extends vehicleAir {//Source: https://millionmilesecrets.com/
 
     public void setNumOfEngines(int numOfEngines) {
         this.numOfEngines = numOfEngines;
+    }
+
+
+    @Override
+    public String toString() {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(super.getDateOfProduction());
+
+        return super.getCategory()+"\n"+
+                super.getName()+"\n"+
+                super.getBrand()+"\n"+
+                cal.get(Calendar.DAY_OF_MONTH)+"\n"+
+                cal.get(Calendar.MONTH)+"\n"+
+                cal.get(Calendar.YEAR)+"\n"+
+                super.getIDNumber()+"\n"+
+                super.getAvailability()+"\n"+
+                super.getCapacity()+"\n"+
+                super.getLength()+"\n"+
+                super.getHeight()+"\n"+
+                super.getVolume()+"\n"+
+                super.getGrossWeight()+"\n"+
+                super.getMaxTakeoffWeight()+"\n"+
+                getNumOfDoors()+"\n"+
+                getNose()+"\n"+
+                getWheels()+"\n"+
+                getNumOfEngines();
     }
 }

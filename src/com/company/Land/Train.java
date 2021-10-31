@@ -2,6 +2,7 @@ package com.company.Land;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Calendar;
 
 public class Train extends vehicleLand {
     private int maxSpeed;
@@ -127,10 +128,31 @@ public class Train extends vehicleLand {
         return typeOfTrain;
     }
 
+    @Override
     public String toString() {
-        return "\nCategory: " + super.getCategory() + "\nName: " + super.getName() + "\nBrand: " + super.getBrand() + "\nDate Of Production: " + super.getDateOfProduction() +
-                "\nID Number: " + super.getIDNumber() + "\nAvailability: " + super.getAvailability() + "\nType of Land Transport: " + super.getTypeOfLandTransport() +
-                "\nMaximum speed: " + getMaxSpeed() + "mph" + "\nLong : " + getLong() + "meter" + "\nNumber of passenger: " + getPassenger() + "\nNumber of body: " +
-                getBody() + "\nType of Train: " + getTypeOfTrain();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(super.getDateOfProduction());
+
+        return super.getCategory()+"\n"+
+                super.getName()+"\n"+
+                super.getBrand()+"\n"+
+                cal.get(Calendar.DAY_OF_MONTH)+"\n"+
+                cal.get(Calendar.MONTH)+"\n"+
+                cal.get(Calendar.YEAR)+"\n"+
+                super.getIDNumber()+"\n"+
+                super.getAvailability()+"\n"+
+                super.getTypeOfLandTransport()+"\n"+
+                getMaxSpeed()+"\n"+
+                getLong()+"\n"+
+                getPassenger()+"\n"+
+                getBody()+"\n"+
+                getTypeOfTrain();
     }
+
+//    public String toString() {
+//        return "\nCategory: " + super.getCategory() + "\nName: " + super.getName() + "\nBrand: " + super.getBrand() + "\nDate Of Production: " + super.getDateOfProduction() +
+//                "\nID Number: " + super.getIDNumber() + "\nAvailability: " + super.getAvailability() + "\nType of Land Transport: " + super.getTypeOfLandTransport() +
+//                "\nMaximum speed: " + getMaxSpeed() + "mph" + "\nLong : " + getLong() + "meter" + "\nNumber of passenger: " + getPassenger() + "\nNumber of body: " +
+//                getBody() + "\nType of Train: " + getTypeOfTrain();
+//    }
 }

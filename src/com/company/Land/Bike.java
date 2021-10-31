@@ -2,6 +2,7 @@ package com.company.Land;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Calendar;
 
 public class Bike extends vehicleLand {
     private String frameSize;
@@ -133,10 +134,31 @@ public class Bike extends vehicleLand {
         return material;
     }
 
+    @Override
     public String toString() {
-        return "\nCategory: " + super.getCategory() + "\nName: " + super.getName() + "\nBrand: " + super.getBrand() + "\nDate Of Production: " + super.getDateOfProduction() +
-                "\nID Number: " + super.getIDNumber() + "\nAvailability: " + super.getAvailability() + "\nType of Land Transport: " + super.getTypeOfLandTransport() +
-                "\nFrame size: " + getFrameSize() + "\nHandlebar Width: " + getHandlebarWidth() + "cm" + "\nNumber of seat: " + getSeat() + "\nNumber of gear: " +
-                getGear() + "\nFrame material: " + getMaterial();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(super.getDateOfProduction());
+
+        return super.getCategory()+"\n"+
+                super.getName()+"\n"+
+                super.getBrand()+"\n"+
+                cal.get(Calendar.DAY_OF_MONTH)+"\n"+
+                cal.get(Calendar.MONTH)+"\n"+
+                cal.get(Calendar.YEAR)+"\n"+
+                super.getIDNumber()+"\n"+
+                super.getAvailability()+"\n"+
+                super.getTypeOfLandTransport()+"\n"+
+                getFrameSize()+"\n"+
+                getHandlebarWidth()+"\n"+
+                getSeat()+"\n"+
+                getGear()+"\n"+
+                getMaterial();
     }
+
+//    public String toString() {
+//        return "\nCategory: " + super.getCategory() + "\nName: " + super.getName() + "\nBrand: " + super.getBrand() + "\nDate Of Production: " + super.getDateOfProduction() +
+//                "\nID Number: " + super.getIDNumber() + "\nAvailability: " + super.getAvailability() + "\nType of Land Transport: " + super.getTypeOfLandTransport() +
+//                "\nFrame size: " + getFrameSize() + "\nHandlebar Width: " + getHandlebarWidth() + "cm" + "\nNumber of seat: " + getSeat() + "\nNumber of gear: " +
+//                getGear() + "\nFrame material: " + getMaterial();
+//    }
 }

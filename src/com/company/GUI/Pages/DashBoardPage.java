@@ -17,6 +17,7 @@ import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
+import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -52,7 +53,11 @@ public class DashBoardPage extends JFrame {
                             null, new Object[]{"Save", "Don't save",
                                     "Cancel"}, null);
                     if (result == 0) {
-
+                        try {
+                            Records.saveNewOriginal(System.getProperty("user.dir") + "\\assets\\test.txt");
+                        } catch (FileNotFoundException e1) {
+                            e1.printStackTrace();
+                        }
                         dispose();
                     } else if (result == 1) {
                         dispose();

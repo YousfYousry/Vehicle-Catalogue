@@ -2,6 +2,7 @@ package com.company.Water;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Calendar;
 
 public class Kayak extends vehicleSea{
     private String kayakModel;
@@ -99,10 +100,31 @@ public class Kayak extends vehicleSea{
     public String getMaxShoeSize(){return      Integer.toString(maxShoeSize);}
     public String getMaxPayload(){return       Integer.toString(maxPayload);}
 
-    public String toString(){
-        return "\nCategory: "+super.getCategory()+"\nName: "+super.getName()+"\nBrand: "+super.getBrand()+"\nDate Of Production: "+super.getDateOfProduction()+
-                "\nID Number: "+super.getIDNumber()+"\nAvailability: "+super.getAvailability()+"\nType of Water Transport: "+super.getTypeOfWaterTransport()+
-                "\nKayak Model: "+getKayakModel()+"\nHull Specs: "+getHullSpecs()+"\nMaximum Paddler Weight: "+getMaxPaddlerWeight()+"\nMaximum Shoe Size: "+
-                getMaxShoeSize()+"\nMaximum Payload: "+getMaxPayload();
+    @Override
+    public String toString() {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(super.getDateOfProduction());
+
+        return super.getCategory()+"\n"+
+                super.getName()+"\n"+
+                super.getBrand()+"\n"+
+                cal.get(Calendar.DAY_OF_MONTH)+"\n"+
+                cal.get(Calendar.MONTH)+"\n"+
+                cal.get(Calendar.YEAR)+"\n"+
+                super.getIDNumber()+"\n"+
+                super.getAvailability()+"\n"+
+                super.getTypeOfWaterTransport()+"\n"+
+                getKayakModel()+"\n"+
+                getHullSpecs()+"\n"+
+                getMaxPaddlerWeight()+"\n"+
+                getMaxShoeSize()+"\n"+
+                getMaxPayload();
     }
+
+//    public String toString(){
+//        return "\nCategory: "+super.getCategory()+"\nName: "+super.getName()+"\nBrand: "+super.getBrand()+"\nDate Of Production: "+super.getDateOfProduction()+
+//                "\nID Number: "+super.getIDNumber()+"\nAvailability: "+super.getAvailability()+"\nType of Water Transport: "+super.getTypeOfWaterTransport()+
+//                "\nKayak Model: "+getKayakModel()+"\nHull Specs: "+getHullSpecs()+"\nMaximum Paddler Weight: "+getMaxPaddlerWeight()+"\nMaximum Shoe Size: "+
+//                getMaxShoeSize()+"\nMaximum Payload: "+getMaxPayload();
+//    }
 }

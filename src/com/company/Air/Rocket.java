@@ -2,6 +2,7 @@ package com.company.Air;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Calendar;
 
 public class Rocket extends vehicleAir {//Source: https://en.wikipedia.org/wiki/Comparison_of_orbital_launch_systems
     private String manufacturer;
@@ -139,5 +140,30 @@ public class Rocket extends vehicleAir {//Source: https://en.wikipedia.org/wiki/
 
     public void setNumOfFailures(int numOfFailures) {
         this.numOfFailures = numOfFailures;
+    }
+
+    @Override
+    public String toString() {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(super.getDateOfProduction());
+
+        return super.getCategory()+"\n"+
+                super.getName()+"\n"+
+                super.getBrand()+"\n"+
+                cal.get(Calendar.DAY_OF_MONTH)+"\n"+
+                cal.get(Calendar.MONTH)+"\n"+
+                cal.get(Calendar.YEAR)+"\n"+
+                super.getIDNumber()+"\n"+
+                super.getAvailability()+"\n"+
+                super.getCapacity()+"\n"+
+                super.getLength()+"\n"+
+                super.getHeight()+"\n"+
+                super.getVolume()+"\n"+
+                super.getGrossWeight()+"\n"+
+                super.getMaxTakeoffWeight()+"\n"+
+                getManufacturer()+"\n"+
+                getOrigin()+"\n"+
+                getFirstDateOfFlight()+"\n"+
+                getNumOfFailures();
     }
 }
