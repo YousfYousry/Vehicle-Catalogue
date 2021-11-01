@@ -48,11 +48,11 @@ public class Launcher {
         search.addItemListener(e -> dashboard.viewSearch((e.getStateChange() == ItemEvent.SELECTED)));
         filter.addItemListener(e -> dashboard.viewFilter((e.getStateChange() == ItemEvent.SELECTED)));
         label.addItemListener(e -> dashboard.viewLabel((e.getStateChange() == ItemEvent.SELECTED)));
-        JMenuItem save = new JMenuItem("Save");
+        JMenuItem save = new JMenuItem("Save as txt");
 //        JMenuItem saveAs = new JMenuItem("Save As...");
-        JMenuItem Import = new JMenuItem("Import hard coded Records");
+        JMenuItem Import = new JMenuItem("Reset from hard coded Records");
         JMenuItem record = new JMenuItem("Record");
-        JMenuItem reset = new JMenuItem("Reset");
+        JMenuItem reset = new JMenuItem("Reset from txt file");
         JMenuItem deleteAll = new JMenuItem("Delete All");
         Import.addActionListener(e -> {
             Records.setHardCoded();
@@ -148,7 +148,8 @@ public class Launcher {
         file.add(New);
         file.add(save);
 //        file.add(saveAs);
-        file.add(Import);
+//        file.add(Import);
+        edit.add(Import);
         edit.add(reset);
         edit.add(deleteAll);
         view.add(search);
