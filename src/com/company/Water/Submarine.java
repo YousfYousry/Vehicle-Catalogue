@@ -81,6 +81,27 @@ public class Submarine extends vehicleSea {
         }
     }
 
+    @Override
+    public String getInformation() {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(super.getDateOfProduction());
+
+        return super.getCategory()+"\n"+
+                super.getName()+"\n"+
+                super.getBrand()+"\n"+
+                cal.get(Calendar.DAY_OF_MONTH)+"\n"+
+                cal.get(Calendar.MONTH)+"\n"+
+                cal.get(Calendar.YEAR)+"\n"+
+                super.getIDNumber()+"\n"+
+                super.getAvailability()+"\n"+
+                super.getTypeOfWaterTransport()+"\n"+
+                getSubmarineClass()+"\n"+
+                getSubmergedDisplacement()+"\n"+
+                getEndurance()+"\n"+
+                getAirIndependentPropulsion()+"\n"+
+                getPermanentMagnetMotor();
+    }
+
     public Submarine(String aCategory, String aName, String aBrand, int aDay, int aMonth, int aYear, String aIDNumber, boolean aAvailability, String aTypeOfWaterTransport, String aSubmarineClass, double aSubmergedDisplacement, int aEndurance, boolean aAirIndependentPropulsion, boolean aPermanentMagnetMotor) {
         super(aCategory, aName, aBrand, aDay, aMonth, aYear, aIDNumber, aAvailability, aTypeOfWaterTransport);
         setSubmarineClass(aSubmarineClass);

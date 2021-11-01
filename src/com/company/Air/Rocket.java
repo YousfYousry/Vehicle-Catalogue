@@ -19,6 +19,8 @@ public class Rocket extends vehicleAir {//Source: https://en.wikipedia.org/wiki/
         this.numOfFailures = 0;
     }
 
+
+
     private JTextField capacityField = new JTextField(getCapacity());
     private JTextField lengthField = new JTextField(getLength());
     private JTextField heightField = new JTextField(getHeight());
@@ -74,6 +76,31 @@ public class Rocket extends vehicleAir {//Source: https://en.wikipedia.org/wiki/
 
     public Rocket getFields(String aCategory, String aName, String aBrand, int aDay, int aMonth, int aYear, String aIDNumber, boolean aAvailability) {
         return new Rocket(aCategory, aName, aBrand, aDay, aMonth, aYear, aIDNumber, aAvailability, capacityField.getText(), lengthField.getText(), heightField.getText(), volumeField.getText(), grossWeightField.getText(), maxTakeoffWeightField.getText(), manufacturerField.getText(), originField.getText(), firstDateOfFlightField.getText(), getInt(numOfFailuresField.getText()));
+    }
+
+    @Override
+    public String getInformation() {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(super.getDateOfProduction());
+
+        return super.getCategory().trim()+"\n"+
+                super.getName().trim()+"\n"+
+                super.getBrand().trim()+"\n"+
+                cal.get(Calendar.DAY_OF_MONTH)+"\n"+
+                cal.get(Calendar.MONTH)+"\n"+
+                cal.get(Calendar.YEAR)+"\n"+
+                super.getIDNumber().trim()+"\n"+
+                super.getAvailability()+"\n"+
+                super.getCapacity().trim()+"\n"+
+                super.getLength().trim()+"\n"+
+                super.getHeight().trim()+"\n"+
+                super.getVolume().trim()+"\n"+
+                super.getGrossWeight().trim()+"\n"+
+                super.getMaxTakeoffWeight().trim()+"\n"+
+                getManufacturer().trim()+"\n"+
+                getOrigin().trim()+"\n"+
+                getFirstDateOfFlight().trim()+"\n"+
+                getNumOfFailures().trim();
     }
 
     private int getInt(String str) {
@@ -147,23 +174,23 @@ public class Rocket extends vehicleAir {//Source: https://en.wikipedia.org/wiki/
         Calendar cal = Calendar.getInstance();
         cal.setTime(super.getDateOfProduction());
 
-        return super.getCategory()+"\n"+
-                super.getName()+"\n"+
-                super.getBrand()+"\n"+
+        return super.getCategory().trim()+"\n"+
+                super.getName().trim()+"\n"+
+                super.getBrand().trim()+"\n"+
                 cal.get(Calendar.DAY_OF_MONTH)+"\n"+
                 cal.get(Calendar.MONTH)+"\n"+
                 cal.get(Calendar.YEAR)+"\n"+
-                super.getIDNumber()+"\n"+
+                super.getIDNumber().trim()+"\n"+
                 super.getAvailability()+"\n"+
-                super.getCapacity()+"\n"+
-                super.getLength()+"\n"+
-                super.getHeight()+"\n"+
-                super.getVolume()+"\n"+
-                super.getGrossWeight()+"\n"+
-                super.getMaxTakeoffWeight()+"\n"+
-                getManufacturer()+"\n"+
-                getOrigin()+"\n"+
-                getFirstDateOfFlight()+"\n"+
-                getNumOfFailures();
+                super.getCapacity().trim()+"\n"+
+                super.getLength().trim()+"\n"+
+                super.getHeight().trim()+"\n"+
+                super.getVolume().trim()+"\n"+
+                super.getGrossWeight().trim()+"\n"+
+                super.getMaxTakeoffWeight().trim()+"\n"+
+                getManufacturer().trim()+"\n"+
+                getOrigin().trim()+"\n"+
+                getFirstDateOfFlight().trim()+"\n"+
+                getNumOfFailures().trim();
     }
 }

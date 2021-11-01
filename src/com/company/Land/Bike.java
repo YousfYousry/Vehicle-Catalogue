@@ -79,6 +79,27 @@ public class Bike extends vehicleLand {
         }
     }
 
+    @Override
+    public String getInformation() {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(super.getDateOfProduction());
+
+        return super.getCategory()+"\n"+
+                super.getName()+"\n"+
+                super.getBrand()+"\n"+
+                cal.get(Calendar.DAY_OF_MONTH)+"\n"+
+                cal.get(Calendar.MONTH)+"\n"+
+                cal.get(Calendar.YEAR)+"\n"+
+                super.getIDNumber()+"\n"+
+                super.getAvailability()+"\n"+
+                super.getTypeOfLandTransport()+"\n"+
+                getFrameSize()+"\n"+
+                getHandlebarWidth()+"\n"+
+                getSeat()+"\n"+
+                getGear()+"\n"+
+                getMaterial();
+    }
+
     public Bike(String aCategory, String aName, String aBrand, int aDay, int aMonth, int aYear, String aIDNumber, boolean aAvailability, String aTypeOfLandTransport, String aFrameSize, double aHandlebarWidth, int aseat, int aGear, String aMaterial) {
         super(aCategory, aName, aBrand, aDay, aMonth, aYear, aIDNumber, aAvailability, aTypeOfLandTransport);
         setFrameSize(aFrameSize);

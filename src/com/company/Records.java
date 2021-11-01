@@ -17,6 +17,8 @@ import java.io.PrintWriter;
 import java.util.*;
 
 public class Records {
+    private static String fileName = System.getProperty("user.dir") + "\\assets\\Records.txt";
+
     private static ArrayList<vehicle> currentRecords = getOriginal();
 
     public static boolean hasChanges() {
@@ -87,7 +89,6 @@ public class Records {
     }
 
     private static vehicle getVehicle(ArrayList<String> values) {
-
         try {
             if (values.get(0).compareTo("Helicopter") == 0) {
                 return new Helicopter(values.get(0), values.get(1), values.get(2), getInt(values.get(3)), getInt(values.get(4)) + 1, getInt(values.get(5)), values.get(6), getBool(values.get(7)), values.get(8), values.get(9), values.get(10), values.get(11), values.get(12), values.get(13), getInt(values.get(14)), getInt(values.get(15)), values.get(16), values.get(17));
@@ -139,7 +140,7 @@ public class Records {
 
     private static ArrayList<vehicle> getOriginal() {
         try {
-            File myObj = new File(System.getProperty("user.dir") + "\\assets\\test.txt");
+            File myObj = new File(fileName);
             Scanner myReader = new Scanner(myObj);
             StringBuilder data = new StringBuilder();
             while (myReader.hasNextLine()) {
@@ -200,7 +201,7 @@ public class Records {
         return records;
     }
 
-    public static void saveNewOriginal(String fileName) throws FileNotFoundException {
+    public static void saveNewOriginal() throws FileNotFoundException {
         PrintWriter pw = new PrintWriter(new FileOutputStream(fileName));
         pw.println(currentRecords.toString());
         pw.close();

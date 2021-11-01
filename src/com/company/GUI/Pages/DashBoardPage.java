@@ -54,7 +54,7 @@ public class DashBoardPage extends JFrame {
                                     "Cancel"}, null);
                     if (result == 0) {
                         try {
-                            Records.saveNewOriginal(System.getProperty("user.dir") + "\\assets\\test.txt");
+                            Records.saveNewOriginal();
                         } catch (FileNotFoundException e1) {
                             e1.printStackTrace();
                         }

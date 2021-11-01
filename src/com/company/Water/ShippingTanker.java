@@ -80,6 +80,27 @@ public class ShippingTanker extends vehicleSea{
         }
     }
 
+    @Override
+    public String getInformation() {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(super.getDateOfProduction());
+
+        return super.getCategory()+"\n"+
+                super.getName()+"\n"+
+                super.getBrand()+"\n"+
+                cal.get(Calendar.DAY_OF_MONTH)+"\n"+
+                cal.get(Calendar.MONTH)+"\n"+
+                cal.get(Calendar.YEAR)+"\n"+
+                super.getIDNumber()+"\n"+
+                super.getAvailability()+"\n"+
+                super.getTypeOfWaterTransport()+"\n"+
+                getShippingTankerClass()+"\n"+
+                getLength()+"\n"+
+                getBeam()+"\n"+
+                getDraft()+"\n"+
+                getDeadWeightTons();
+    }
+
     public ShippingTanker(String aCategory, String aName, String aBrand, int aDay, int aMonth, int aYear, String aIDNumber, boolean aAvailability, String aTypeOfWaterTransport,String aShippingTankerClass, int aLength, int aBeam, int aDraft, double aDeadWeightTons){
         super(aCategory, aName, aBrand, aDay, aMonth, aYear, aIDNumber, aAvailability, aTypeOfWaterTransport);
         setShippingTankerClass(aShippingTankerClass);

@@ -3,7 +3,6 @@ package com.company;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -17,7 +16,6 @@ public abstract class vehicle {
     private Calendar dateOfProduction;
     private String IDNumber;
     private JCheckBox availability;
-    private SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy");
 
     public vehicle() {
         setCategory("");

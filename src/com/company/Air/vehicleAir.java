@@ -92,6 +92,7 @@ abstract class vehicleAir extends vehicle{
         this.MaxTakeoffWeight = maxTakeoffWeight;
     }
 
+    public abstract String getInformation();
 
     @Override
     public String getParentType(){

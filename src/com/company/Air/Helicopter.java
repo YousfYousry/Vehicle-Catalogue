@@ -71,6 +71,32 @@ public class Helicopter extends vehicleAir {//Source: https://www.aircharterserv
 //        holder.add(update);
         return holder;
     }
+
+    @Override
+    public String getInformation() {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(super.getDateOfProduction());
+
+        return super.getCategory().trim()+"\n"+
+                super.getName().trim()+"\n"+
+                super.getBrand().trim()+"\n"+
+                cal.get(Calendar.DAY_OF_MONTH)+"\n"+
+                cal.get(Calendar.MONTH)+"\n"+
+                cal.get(Calendar.YEAR)+"\n"+
+                super.getIDNumber().trim()+"\n"+
+                super.getAvailability()+"\n"+
+                super.getCapacity().trim()+"\n"+
+                super.getLength().trim()+"\n"+
+                super.getHeight().trim()+"\n"+
+                super.getVolume().trim()+"\n"+
+                super.getGrossWeight().trim()+"\n"+
+                super.getMaxTakeoffWeight().trim()+"\n"+
+                getDistance().trim()+"\n"+
+                getNumOfSeats().trim()+"\n"+
+                getEngine().trim()+"\n"+
+                getSpeed().trim();
+    }
+
     public Helicopter getFields(String aCategory, String aName, String aBrand, int aDay, int aMonth, int aYear, String aIDNumber, boolean aAvailability){
         return new Helicopter(aCategory, aName, aBrand, aDay, aMonth, aYear, aIDNumber, aAvailability, capacityField.getText(), lengthField.getText(), heightField.getText(), volumeField.getText(), grossWeightField.getText(), maxTakeoffWeightField.getText(),getInt(distanceField.getText()),getInt(numOfSeatsField.getText()),engineField.getText(),speedField.getText());
     }
@@ -107,24 +133,24 @@ public class Helicopter extends vehicleAir {//Source: https://www.aircharterserv
         Calendar cal = Calendar.getInstance();
         cal.setTime(super.getDateOfProduction());
 
-        return super.getCategory()+"\n"+
-                super.getName()+"\n"+
-                super.getBrand()+"\n"+
+        return super.getCategory().trim()+"\n"+
+                super.getName().trim()+"\n"+
+                super.getBrand().trim()+"\n"+
                 cal.get(Calendar.DAY_OF_MONTH)+"\n"+
                 cal.get(Calendar.MONTH)+"\n"+
                 cal.get(Calendar.YEAR)+"\n"+
-                super.getIDNumber()+"\n"+
+                super.getIDNumber().trim()+"\n"+
                 super.getAvailability()+"\n"+
-                super.getCapacity()+"\n"+
-                super.getLength()+"\n"+
-                super.getHeight()+"\n"+
-                super.getVolume()+"\n"+
-                super.getGrossWeight()+"\n"+
-                super.getMaxTakeoffWeight()+"\n"+
-                getDistance()+"\n"+
-                getNumOfSeats()+"\n"+
-                getEngine()+"\n"+
-                getSpeed();
+                super.getCapacity().trim()+"\n"+
+                super.getLength().trim()+"\n"+
+                super.getHeight().trim()+"\n"+
+                super.getVolume().trim()+"\n"+
+                super.getGrossWeight().trim()+"\n"+
+                super.getMaxTakeoffWeight().trim()+"\n"+
+                getDistance().trim()+"\n"+
+                getNumOfSeats().trim()+"\n"+
+                getEngine().trim()+"\n"+
+                getSpeed().trim();
     }
 
     public Helicopter(int distance, int numOfSeats, String engine, String speed) {

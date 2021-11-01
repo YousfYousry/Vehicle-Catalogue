@@ -68,7 +68,7 @@ public class Launcher {
         });
         save.addActionListener(e -> {
             try {
-                Records.saveNewOriginal(System.getProperty("user.dir") + "\\assets\\test.txt");
+                Records.saveNewOriginal();
             } catch (FileNotFoundException e1) {
                 e1.printStackTrace();
             }

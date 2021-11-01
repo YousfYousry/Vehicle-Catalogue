@@ -22,6 +22,8 @@ abstract class vehicleLand extends vehicle {
 
     String getTypeOfLandTransport(){return typeOfLandTransport;}
 
+    public abstract String getInformation();
+
     @Override
     public String getParentType(){
         return "land";

@@ -83,6 +83,30 @@ public class Plane extends vehicleAir {//Source: https://millionmilesecrets.com/
         }
     }
 
+    @Override
+    public String getInformation() {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(super.getDateOfProduction());
+
+        return super.getCategory().trim()+"\n"+
+                super.getName().trim()+"\n"+
+                super.getBrand().trim()+"\n"+
+                cal.get(Calendar.DAY_OF_MONTH)+"\n"+
+                cal.get(Calendar.MONTH)+"\n"+
+                cal.get(Calendar.YEAR)+"\n"+
+                super.getIDNumber().trim()+"\n"+
+                super.getAvailability()+"\n"+
+                super.getCapacity().trim()+"\n"+
+                super.getLength().trim()+"\n"+
+                super.getHeight().trim()+"\n"+
+                super.getVolume().trim()+"\n"+
+                super.getGrossWeight().trim()+"\n"+
+                super.getMaxTakeoffWeight().trim()+"\n"+
+                getNumOfDoors().trim()+"\n"+
+                getNose().trim()+"\n"+
+                getWheels().trim()+"\n"+
+                getNumOfEngines().trim();
+    }
 
     public Plane(String aCategory, String aName, String aBrand, int aDay, int aMonth, int aYear, String aIDNumber, boolean aAvailability, String capacity, String length, String height, String volume, String grossWeight, String maxTakeoffWeight, int numOfDoors, String nose, String wheels, int numOfEngines) {
         super(aCategory, aName, aBrand, aDay, aMonth, aYear, aIDNumber, aAvailability, capacity, length, height, volume, grossWeight, maxTakeoffWeight);
@@ -148,23 +172,23 @@ public class Plane extends vehicleAir {//Source: https://millionmilesecrets.com/
         Calendar cal = Calendar.getInstance();
         cal.setTime(super.getDateOfProduction());
 
-        return super.getCategory()+"\n"+
-                super.getName()+"\n"+
-                super.getBrand()+"\n"+
+        return super.getCategory().trim()+"\n"+
+                super.getName().trim()+"\n"+
+                super.getBrand().trim()+"\n"+
                 cal.get(Calendar.DAY_OF_MONTH)+"\n"+
                 cal.get(Calendar.MONTH)+"\n"+
                 cal.get(Calendar.YEAR)+"\n"+
-                super.getIDNumber()+"\n"+
+                super.getIDNumber().trim()+"\n"+
                 super.getAvailability()+"\n"+
-                super.getCapacity()+"\n"+
-                super.getLength()+"\n"+
-                super.getHeight()+"\n"+
-                super.getVolume()+"\n"+
-                super.getGrossWeight()+"\n"+
-                super.getMaxTakeoffWeight()+"\n"+
-                getNumOfDoors()+"\n"+
-                getNose()+"\n"+
-                getWheels()+"\n"+
-                getNumOfEngines();
+                super.getCapacity().trim()+"\n"+
+                super.getLength().trim()+"\n"+
+                super.getHeight().trim()+"\n"+
+                super.getVolume().trim()+"\n"+
+                super.getGrossWeight().trim()+"\n"+
+                super.getMaxTakeoffWeight().trim()+"\n"+
+                getNumOfDoors().trim()+"\n"+
+                getNose().trim()+"\n"+
+                getWheels().trim()+"\n"+
+                getNumOfEngines().trim();
     }
 }

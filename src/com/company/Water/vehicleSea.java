@@ -22,6 +22,8 @@ abstract class vehicleSea extends vehicle {
 
     String getTypeOfWaterTransport(){return typeOfWaterTransport;}
 
+    public abstract String getInformation();
+
     @Override
     public String getParentType(){
         return "water";
